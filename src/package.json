@@ -1,0 +1,9 @@
+{
+  "name": "src",
+  "version": "0.0.1",
+  "description": "Website for the autonomous oral history group",
+  "main": "index.js",
+  "repository": "https://github.com/autonomous-oral-history-group/aohg_site",
+  "author": "Michael Appuhn",
+  "license": "AGPL-3.0-or-later"
+}

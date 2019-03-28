@@ -8,3 +8,6 @@ The following environment variables are used to configure local versus product i
  - `DATABASE_PASSWORD`
  - `SECRET_KEY`
  - `STATIC_ROOT`
+
+
+
