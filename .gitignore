@@ -118,7 +118,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+# vim
 *.swp
-django_project/
 
+# front-end dev
 node_modules/
