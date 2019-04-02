@@ -5,5 +5,6 @@ from django.db import models
 
 # Create your models here.
 
-class Name(model.Models):
+class Name(models.Model):
 	name = models.CharField(max_length=120, primary_key=True)
+	description = models.TextField()
