@@ -9,6 +9,17 @@ https://docs.djangoproject.com/en/1.8/topics/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import netifaces
+from django.core.exceptions import ImproperlyConfigured
+
+def get_env_variable(var_name): 
+    try: 
+        return os.environ[var_name] 
+    except KeyError: 
+        #error_msg = msg % var_name 
+        error_msg = var_name 
+        raise ImproperlyConfigured(error_msg) 
+        pass
+
 
 # Find out what the IP addresses are at run time
 # This is necessary because otherwise Gunicorn will reject the connections
@@ -36,13 +47,6 @@ DEBUG = True
 
 # Discover our IP address
 ALLOWED_HOSTS = ip_addresses()
-
-def get_env_variable(var_name): 
-    try: 
-        return os.environ[var_name] 
-    except KeyError: 
-        error_msg = msg % var_name 
-        raise ImproperlyConfigured(error_msg) 
 
 
 # Application definition
@@ -95,7 +99,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 		  'NAME': get_env_variable('DATABASE_NAME'),
 		  'USER': get_env_variable('DATABASE_USER'),
-		  'PASSWORD' : get_env_variable('DATABASE_PASSWORD')
+		  'PASSWORD' : get_env_variable('DATABASE_PASSWORD'),
         'HOST': 'localhost',
         'PORT': '',
     }
