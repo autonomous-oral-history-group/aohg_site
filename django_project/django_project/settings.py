@@ -52,6 +52,7 @@ ALLOWED_HOSTS = ip_addresses()
 # Application definition
 INSTALLED_APPS = (
     'names.apps.NamesConfig',
+	 'recordings.apps.RecordingsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
