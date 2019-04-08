@@ -6926,12 +6926,42 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+* {
+  color: black; }
+
 html,
 body {
   font-family: 'Helvetica'; }
 
+h1 {
+  font-weight: 400;
+  font-size: 1.8em; }
+
+p {
+  font-size: 1.2rem;
+  margin-top: .2em; }
+
 .page {
   margin-top: 4em; }
 
+.logo {
+  font-size: 1.6em; }
+
+.navigation ul.menu-list {
+  border-left: none;
+  line-height: .15rem; }
+
 .navigation li {
-  font-size: 3em; }
+  font-size: 2.5rem;
+  margin-top: .2em;
+  margin-bottom: .2rem; }
+  .navigation li ul {
+    border-left: none; }
+  .navigation li a {
+    padding: .7em .2em; }
+    .navigation li a.is-active {
+      background-color: white;
+      color: black; }
+    .navigation li a:hover {
+      background-color: black;
+      color: white; }
