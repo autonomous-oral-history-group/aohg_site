@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.db import models
+
+# Create your models here.
+from modelcluster.fields import ParentalKey
+
+from wagtail.wagtailcore.models import Page, Orderable
+from wagtail.wagtailcore.fields import RichTextField
+from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel
+from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
+from wagtail.wagtailsearch import index
+
+class ContentPage(Page):
+
+    # Database fields
+
+    body = RichTextField()
+    date = models.DateField("Post date")
+
+
+    # Search index configuration
+
+    search_fields = Page.search_fields + [
+        index.SearchField('body'),
+        index.FilterField('date'),
+    ]
+
+
+    # Editor panels configuration
+
+    content_panels = Page.content_panels + [
+        FieldPanel('date'),
+        FieldPanel('body', classname="full"),
+    ]
+
+    promote_panels = [
+        MultiFieldPanel(Page.promote_panels, "Common page configuration"),
+    ]
+
+
+    # Parent page / subpage type rules
+
+    parent_page_types = []
+    subpage_types = []
