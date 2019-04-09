@@ -60,20 +60,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles', 
 	 'audiofield',
-'wagtail.wagtailforms',
-'wagtail.wagtailredirects',
-'wagtail.wagtailembeds',
-'wagtail.wagtailsites',
-'wagtail.wagtailusers',
-'wagtail.wagtailsnippets',
-'wagtail.wagtaildocs',
-'wagtail.wagtailimages',
-'wagtail.wagtailsearch',
-'wagtail.wagtailadmin',
-'wagtail.wagtailcore',
-
-'modelcluster',
-'taggit',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -86,12 +72,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware', 
 	 'audiofield.middleware.threadlocals.ThreadLocals',
-	'wagtail.wagtailcore.middleware.SiteMiddleware',
-	'wagtail.wagtailredirects.middleware.RedirectMiddleware',
-
-
 )
-
 
 ROOT_URLCONF = 'django_project.urls'
 
@@ -146,7 +127,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
 STATIC_URL = '/static/'
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 # Allow Django from all hosts. This snippet is installed from
@@ -186,6 +166,3 @@ FREQ_TYPE_VALUE = 8000
 
 # 0-Keep original, 1-Convert to MP3, 2-Convert to WAV, 3-Convert to OGG
 CONVERT_TYPE_VALUE = 0
-
-WAGTAIL_SITE_NAME = 'Autonomous Oral History Group'
-
