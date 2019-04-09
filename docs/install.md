@@ -26,6 +26,11 @@ The following environment variables are used to configure installs. I recommend 
 
 [django-audiofield](https://github.com/areski/django-audiofield) is installed as a git [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules), it seems like the annoying thing will be [cloning](https://git-scm.com/book/en/v2/Git-Tools-Submodules#_cloning_submodules) with this approach. Sorry! Might refactor if it's a pain. As of writing, I'll be trying to install [version 0.9.2](https://github.com/areski/django-audiofield/releases/tag/v0.9.2).
 
+on init: 
+`git submodule update --init --recursive`
+
+`git pull --recurse-submodules`
+'git submodule update --recursive --remote` is used to update
 
 According to django-audiofield, it depends on:
  - `libsox-fmt-mp3` : (which I'm hoping is just [SoX](https://arielvb.readthedocs.io/en/latest/docs/commandline/sox.html)
@@ -33,3 +38,6 @@ According to django-audiofield, it depends on:
  - `mpg321` : trying `brew install mpg321`
  - `dir2ogg` : trying `brew install dir2ogg` didn't work, here's the [github](https://github.com/julian-klode/dir2ogg)
  - `libav-tools` : `brew install libav`
+
+
+

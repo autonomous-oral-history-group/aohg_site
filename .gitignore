@@ -11,6 +11,11 @@
 .viminfo
 .lesshst
 etc/
+.DS_Store
+
+
+# project dev
+media/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
