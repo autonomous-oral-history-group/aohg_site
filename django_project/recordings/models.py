@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from names.models import Name
 
 # Create your models here.
 
@@ -14,6 +15,7 @@ class Recording(models.Model):
 	audio_file = AudioField(upload_to='recordings', blank=True,
                         ext_whitelist=(".mp3", ".wav", ".ogg"),
                         help_text=("Allowed type - .mp3, .wav, .ogg")) 
+	names = models.ForeignKey(Name, on_delete=models.CASCADE)
 
 	def audio_file_player(self):
 		 """audio player tag for admin"""
