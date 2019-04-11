@@ -9,3 +9,4 @@ from tinymce.models import HTMLField
 class Name(models.Model):
 	name = models.CharField(max_length=120, primary_key=True)
 	description = HTMLField() 
+	slug = models.SlugField(unique=True) 

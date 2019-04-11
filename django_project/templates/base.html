@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Autonomous Oral History Group</title>
+    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Bulma Version 0.7.4-->
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" />
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+	<div class="container page">
+		 <div class="columns">
+			  <div class="column is-3 navigation">
+			  {% block 'navigation' %}
+										  <ul class="menu-list">
+												<li class=""><a>Home</a></li>
+												<li><a>Browse</a></li>
+												  <ul >
+														<li><a class="is-active">Names</a></li>
+												  </ul>
+												<li><a href="">Request</a></li>
+												<li><a href="">About</a></li>
+												<li><a href="">Terms</a></li>
+										  </ul>
+
+			 {% endblock 'navigation' %}
+			 </div>
+			 <div class="column is-6 ">
+				 {% block 'middle_content' %}
+				 <section class=""> 
+					<div class="logo aohg_logo">Autonomous Oral History Group</div>
+					<h1 class="title is-1">
+						 Eduardo Robles
+					</h1>
+					<h2 class="subtitle is-4">
+						 
+					</h2>
+					<br>
+					<p class="">
+						So often we avoid running water, and running water is a lot of fun. A fan brush is a fantastic piece of equipment. Use it. Make friends with it. That's what painting is all about. It should make you feel good when you paint. Painting should do one thing. It should put happiness in your heart.
+					</p>
+
+					<p class="">
+						Don't be afraid to make these big decisions. Once you start, they sort of just make themselves. Play with the angles. It all happens automatically. We spend so much of our life looking - but never seeing. You don't want to kill all your dark areas they are very important. This is your world, whatever makes you happy you can put in it. Go crazy.  
+					</p>
+				 </section>
+
+				 {% endblock 'middle_content' %}
+			 </div>
+			 <div class="column is-3">
+				 {% block 'right_column' %}
+Let all these little things happen. Don't fight them. Learn to use them. The only prerequisite is that it makes you happy. If it makes you happy then it's good. Mountains are so simple, they're hard. Nothing wrong with washing your brush. You have to make these big decisions. We wash our brush with odorless thinner.
+			 <p> </p>
+				 {% endblock 'right_column' %}
+			 </div>
+		</div> 
+ <script src="../js/bulma.js"></script>
+</body>
+
+</html>
+
