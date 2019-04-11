@@ -125,6 +125,9 @@ venv.bak/
 
 # vim
 *.swp
+*.swo
 
 # front-end dev
 node_modules/
+
+/django_project/static/
