@@ -1,9 +1,11 @@
 *{
-color: $black;
+	color: $black;
+	font-family: $font_primary;
 }
 html,
 body {
-	font-family: 'Helvetica';
+	font-family: $font_primary;
+	color: $black;
 }
 
 img {
@@ -14,22 +16,32 @@ img {
 h1{ 
 	font-weight: 400;
 	font-size: 1.8em;
+	color: $black;
 }
 
 
 h2{ 
+	color: $black;
+	font-weight: 400;
 }
 
 h3{ 
+	font-weight: 400;
+	color: $black;
 }
 
 h4{ 
+	font-weight: 400;
+	color: $black;
 }
 
 h5{ 
+	font-weight: 400;
+	color: $black;
 }
 
 p{ 
+	color: $black;
 	font-size: 1.2rem;
 	margin-top: .2em;
 }
@@ -40,5 +52,19 @@ p{
 
 
 .logo{ 
-	font-size: 1.6em;
+	font-size: 1.85em;
+	margin-bottom: 2em;
+}
+
+.title, .title.is-1{ 
+	font-size: 1.85em;
+	font-weight: 400;
+	color: $black;
+}
+
+.subtitle {
+	font-size: 1.85em;
+	font-weight: 400;
+	color: $black;
+
 }
