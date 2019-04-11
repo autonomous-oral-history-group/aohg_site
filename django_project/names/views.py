@@ -11,7 +11,9 @@ from .models import Name
 class NamesList(ListView):
 	model = Name
 	template_name = 'names/name_list.html'
+	context_object_name = 'names'
 
 class NameDetail(DetailView):
 	model = Name
 	template_name = 'names/name_detail.html'
+	context_object_name = 'name'

@@ -1,1 +1,19 @@
 {% extends '../base.html' %}
+
+{% block 'title' %}Names -{% endblock %}
+
+{% block 'middle_content' %}
+	<section class=""> 
+		<div class="logo aohg_logo">Autonomous Oral History Group</div>
+		<h1 class="title is-1">Names</h1>
+
+		{% for name in names %}
+			<h2 class="subtitle is-4">{{ name.name }}</h2> 
+			{{ name.description | safe }}
+
+			<p class="">
+				Don't be afraid to make these big decisions. Once you start, they sort of just make themselves. Play with the angles. It all happens automatically. We spend so much of our life looking - but never seeing. You don't want to kill all your dark areas they are very important. This is your world, whatever makes you happy you can put in it. Go crazy.  
+			</p>
+	</section> 
+	{% endfor %} 
+{% endblock %}
