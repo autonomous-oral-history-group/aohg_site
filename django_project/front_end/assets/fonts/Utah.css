@@ -1,0 +1,7 @@
+
+@font-face {
+    font-family:"Utah";
+    src:url("../assets/fonts/Utah.woff2") format("woff2"),url("../assets/fonts/Utah.woff") format("woff"),url("../assets/fonts/Utah.otf") format("opentype");
+    font-style:normal;font-weight:400;
+}
+        

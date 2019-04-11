@@ -6926,6 +6926,54 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+@font-face {
+  font-family: "Utah";
+  src: url("../assets/fonts/Utah.woff2") format("woff2"), url("../assets/fonts/Utah.woff") format("woff"), url("../assets/fonts/Utah.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Utah Bold";
+  src: url("../assets/fonts/UtahBold.woff2") format("woff2"), url("../assets/fonts/UtahBold.woff") format("woff"), url("../assets/fonts/UtahBold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Utah BoldOblique";
+  src: url("../assets/fonts/UtahBoldOblique.woff2") format("woff2"), url("../assets/fonts/UtahBoldOblique.woff") format("woff"), url("../assets/fonts/UtahBoldOblique.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Utah Condensed";
+  src: url("../assets/fonts/UtahCondensed.woff2") format("woff2"), url("../assets/fonts/UtahCondensed.woff") format("woff"), url("../assets/fonts/UtahCondensed.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Utah Condensed Bold";
+  src: url("../assets/fonts/UtahCondensedBold.woff2") format("woff2"), url("../assets/fonts/UtahCondensedBold.woff") format("woff"), url("../assets/fonts/UtahCondensedBold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Utah Condensed BoldOblique";
+  src: url("../assets/fonts/UtahCondensedBoldOblique.woff2") format("woff2"), url("../assets/fonts/UtahCondensedBoldOblique.woff") format("woff"), url("../assets/fonts/UtahCondensedBoldOblique.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Utah Condensed Oblique";
+  src: url("../assets/fonts/UtahCondensedOblique.woff2") format("woff2"), url("../assets/fonts/UtahCondensedOblique.woff") format("woff"), url("../assets/fonts/UtahCondensedOblique.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Utah Oblique";
+  src: url("../assets/fonts/UtahOblique.woff2") format("woff2"), url("../assets/fonts/UtahOblique.woff") format("woff"), url("../assets/fonts/UtahOblique.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400; }
+
 * {
   color: black; }
 

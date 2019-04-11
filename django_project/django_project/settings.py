@@ -131,7 +131,8 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-	("css", os.path.join(BASE_DIR, 'front_end/css'))
+	("css", os.path.join(BASE_DIR, 'front_end/css')),
+	("assets", os.path.join(BASE_DIR, 'front_end/assets'))
 ]
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
