@@ -8,14 +8,23 @@ from names.models import Name
 
 from django.conf import settings
 from audiofield.fields import AudioField
+from tinymce.models import HTMLField 
 import os.path
 
 # Add the audio field to your model
 class Recording(models.Model):
+	title = models.CharField(max_length=120, primary_key=True) 
+	transcript = HTMLField(blank=True)
+
 	audio_file = AudioField(upload_to='recordings', blank=True,
                         ext_whitelist=(".mp3", ".wav", ".ogg"),
                         help_text=("Allowed type - .mp3, .wav, .ogg")) 
 	names = models.ForeignKey(Name, on_delete=models.CASCADE)
+	slug = models.SlugField( \
+		unique=True, \
+		blank=True, \
+		null=True,
+	) 
 
 	def audio_file_player(self):
 		 """audio player tag for admin"""
