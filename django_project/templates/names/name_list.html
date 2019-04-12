@@ -8,8 +8,10 @@
 		<h1 class="title is-1">Names</h1>
 
 		{% for name in names %}
+			<a href="{%comment%}{% url 'NameDetail' names.slug %}{%endcomment%}">
 				<h2 class="subtitle is-4">{{ name.name }}</h2> 
+			</a>
 			{{ name.description | safe }} 
+		{% endfor %} 
 	</section> 
-	{% endfor %} 
 {% endblock %}
