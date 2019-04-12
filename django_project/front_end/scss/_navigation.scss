@@ -1,32 +1,41 @@
+
+
 .navigation { 
 	ul.menu-list {
 		//margin-left: 2.8em;
 		border-left: none;
 		line-height: .15rem;
+
+		ul{
+			border-left: none; 
+			margin-left: 2em;
+		}
 	}	
 
-	li{
+	ul.menu-list li{
 		font-size: 2.5rem; 
 		margin-top: .2em;
 		margin-bottom: .2rem;
 
-		ul{
-			border-left: none; 
-		}
 
 		a{
 			padding: .7em .2em;
+			color: $black;
 
 			&.is-active{
-				background-color: $white;
+				background-color: transparent;
 				color: $black;
+				@include underline()
 			}
 
 			&:hover{
-				background-color: $black;
-				color: $white;
-			
+				background-color: transparent;
+				@include underline() 
 			} 
+			&:active{
+				text-decoration: none;
+			
+			}
 		}
 	}
 }

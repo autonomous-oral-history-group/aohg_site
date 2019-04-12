@@ -7008,7 +7008,7 @@ h5 {
 
 p {
   color: black;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   margin-top: .2em; }
 
 .page {
@@ -7031,18 +7031,35 @@ p {
 .navigation ul.menu-list {
   border-left: none;
   line-height: .15rem; }
+  .navigation ul.menu-list ul {
+    border-left: none;
+    margin-left: 2em; }
 
-.navigation li {
+.navigation ul.menu-list li {
   font-size: 2.5rem;
   margin-top: .2em;
   margin-bottom: .2rem; }
-  .navigation li ul {
-    border-left: none; }
-  .navigation li a {
-    padding: .7em .2em; }
-    .navigation li a.is-active {
-      background-color: white;
-      color: black; }
-    .navigation li a:hover {
-      background-color: black;
-      color: white; }
+  .navigation ul.menu-list li a {
+    padding: .7em .2em;
+    color: black; }
+    .navigation ul.menu-list li a.is-active {
+      background-color: transparent;
+      color: black;
+      text-decoration: underline;
+      -webkit-text-underline-position: under;
+      -ms-text-underline-position: below;
+      text-underline-position: under; }
+    .navigation ul.menu-list li a:hover {
+      background-color: transparent;
+      text-decoration: underline;
+      -webkit-text-underline-position: under;
+      -ms-text-underline-position: below;
+      text-underline-position: under; }
+    .navigation ul.menu-list li a:active {
+      text-decoration: none; }
+
+.sidebar {
+  font-size: 1.3rem; }
+
+.name-detail p {
+  font-size: 1.05rem; }
