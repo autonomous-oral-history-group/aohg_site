@@ -43,11 +43,15 @@ SECRET_KEY = get_env_variable('DJANGO_SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Discover our IP address
-ALLOWED_HOSTS = ip_addresses()
+#ALLOWED_HOSTS = ip_addresses()
+#ALLOWED_HOSTS += ['aohistorygroup.com']
+ALLOWED_HOSTS = ['aohistorygroup.com', 'www.aohistorygroup.com',  'aohistorygroup.com', '134.209.59.89', '127.0.0.1']
+ALLOWED_HOSTS += ip_addresses()
 
+APPEND_SLASH = True
 
 # Application definition
 INSTALLED_APPS = (
@@ -154,7 +158,7 @@ def ip_addresses():
     return ip_list
 
 # Discover our IP address
-ALLOWED_HOSTS = ip_addresses()
+#ALLOWED_HOSTS = ip_addresses()
 
 #-----
 # Set Following variable
