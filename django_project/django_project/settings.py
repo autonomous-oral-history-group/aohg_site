@@ -57,6 +57,7 @@ APPEND_SLASH = True
 INSTALLED_APPS = (
     'names.apps.NamesConfig',
 	 'recordings.apps.RecordingsConfig',
+	 'pages.apps.PagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
