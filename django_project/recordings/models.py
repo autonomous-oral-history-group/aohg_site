@@ -13,7 +13,7 @@ import os.path
 
 # Add the audio field to your model
 class Recording(models.Model):
-	title = models.CharField(max_length=120, primary_key=True) 
+	title = models.CharField(max_length=120) 
 	transcript = HTMLField(blank=True)
 
 	audio_file = AudioField(upload_to='recordings', blank=True,
