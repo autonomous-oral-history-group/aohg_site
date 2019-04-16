@@ -61,6 +61,7 @@ INSTALLED_APPS = (
     'names.apps.NamesConfig',
 	 'recordings.apps.RecordingsConfig',
 	 'pages.apps.PagesConfig',
+	 'sidebars.apps.SidebarsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -88,7 +89,7 @@ ROOT_URLCONF = 'django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, '../templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -140,7 +141,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, '../static/')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
 	("css", os.path.join(BASE_DIR, '../front_end/css')),
-	("assets", os.path.join(BASE_DIR, 'front_end/assets'))
+	("assets", os.path.join(BASE_DIR, '../front_end/assets'))
 ]
 
 
