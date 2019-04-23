@@ -28,3 +28,17 @@
 		</div>
 	</section> 
 {% endblock %}
+
+
+{% block 'right_column' %}
+	<div class="name-detail__recording-list">
+	{% for recording in name.recordings %}
+		<div class="recording"> 
+			{{ recording.title }} 
+			{% if recording.audio_file %}
+				{{ recording.audio_file_player | safe }}
+			{% endif %}
+		</div>
+	{% endfor %}
+	</div>
+{% endblock %}
