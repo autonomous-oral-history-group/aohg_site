@@ -15,7 +15,7 @@ class Page(models.Model):
 		null=True,
 	) 
 	content = HTMLField(blank=True) 
-	sidebar = models.ForeignKey(Sidebar, on_delete=models.PROTECT, blank=True, null=True)
+	sidebar = models.ForeignKey(Sidebar, on_delete=models.PROTECT, blank=True, null=True, )
 
 	def __str__(self):
 		return self.title

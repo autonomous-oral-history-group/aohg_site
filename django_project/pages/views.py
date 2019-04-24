@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from .models import Page
 
 
@@ -19,3 +19,15 @@ class PageDetail(DetailView):
 	model = Page
 	template_name = 'pages/page_detail.html'
 	context_object_name = 'page' 
+
+class Index(TemplateView):
+	model = Page
+	template_name = 'pages/page_detail.html'
+	context_object_name = 'page' 
+
+	def get_context_data(self, **kwargs):
+		context = super(Index, self).get_context_data(**kwargs)
+		context['page'] = Page.objects.get(slug='home') 
+		return context
+
+

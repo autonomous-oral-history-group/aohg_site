@@ -8,11 +8,6 @@ from tinymce.models import HTMLField
 
 class Sidebar(models.Model):
 	title = models.CharField(max_length=120) 
-	slug = models.SlugField( \
-		unique=True, \
-		blank=True, \
-		null=True,
-	) 
 	content = HTMLField(blank=True) 
 
 	def __str__(self):

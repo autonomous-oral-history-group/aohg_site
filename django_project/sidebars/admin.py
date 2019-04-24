@@ -8,11 +8,9 @@ from .models import Sidebar
 
 @admin.register(Sidebar)
 class SidebarAdmin(admin.ModelAdmin):
-	prepopulated_fields = { 'slug': ('title',)}
 	fields = [ \
 		'title', \
 		'content', \
-		'slug', \
 	]
 
 
