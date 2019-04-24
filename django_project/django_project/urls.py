@@ -19,12 +19,14 @@ from names.views import NamesList
 
 from django.conf import settings
 from django.conf.urls.static import static
+from pages.views import Index
 
 urlpatterns = [
    url(r'^admin/', admin.site.urls),
 	url(r'^tinymce/', include('tinymce.urls')),
-	#url(r'^names', NamesList),
 	url(r'^names/', include('names.urls')),
+	url(r'^', include('pages.urls')),
+   url(r'^', Index.as_view(), name='index'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #https://docs.djangoproject.com/en/1.11/howto/static-files/#serving-files-uploaded-by-a-user-during-development
 

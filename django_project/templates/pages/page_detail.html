@@ -1,0 +1,25 @@
+{% extends '../base.html' %}
+
+{% block 'title' %}{{ page.title }}{% endblock %}
+
+{% block 'middle_content' %}
+	<section class=""> 
+		<div class="logo aohg_logo">Autonomous Oral History Group</div>
+		<h1 class="title">{{ page.title }}</h1>
+		<div class="page"> 
+			{{ page.content | safe }}
+		</div>
+
+	</section> 
+{% endblock %}
+
+
+{% block 'right_column' %}
+	<div class="page-detail__sidebar">
+		{% if page.sidebar %}
+		<div class="sidebar__content"> 
+			{{ page.sidebar.content | safe }} 
+		</div>
+		{% endif %}
+	</div>
+{% endblock %}
