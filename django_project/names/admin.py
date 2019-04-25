@@ -12,7 +12,7 @@ from django.utils.text import slugify
 class RecordingInline(admin.StackedInline): 
 	prepopulated_fields = { 'slug': ('title',)}
 	model = Recording
-	extra = 1
+	extra = 0
 
 @admin.register(Name)
 class NameAdmin(admin.ModelAdmin):
