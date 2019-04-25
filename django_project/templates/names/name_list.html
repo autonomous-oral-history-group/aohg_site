@@ -15,3 +15,7 @@
 		{% endfor %} 
 	</section> 
 {% endblock %}
+
+{% block 'right_column' %}
+	{{ sidebar.content | safe }}
+{% endblock 'right_column' %}
