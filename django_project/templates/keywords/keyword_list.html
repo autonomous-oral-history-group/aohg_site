@@ -1,0 +1,20 @@
+{% extends '../base.html' %}
+
+{% block 'title' %}Names -{% endblock %}
+
+{% block 'middle_content' %}
+	<section class=""> 
+		<div class="logo aohg_logo">Autonomous Oral History Group</div>
+		<h1 class="title is-1">Names</h1>
+
+		{% for keyword in keywords %}
+			<a href="{% url 'keyword_detail' keyword.slug %}">
+				<h2 class="subtitle is-4">{{ keyword.name }}</h2> 
+			</a>
+		{% endfor %} 
+	</section> 
+{% endblock %}
+
+{% block 'right_column' %}
+	{{ sidebar.content | safe }}
+{% endblock 'right_column' %}

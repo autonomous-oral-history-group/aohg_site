@@ -24,7 +24,7 @@ from pages.views import Index
 urlpatterns = [
    url(r'^admin/', admin.site.urls),
 	url(r'^tinymce/', include('tinymce.urls')),
-	url(r'^names/', include('names.urls')),
+	url(r'^', include('names.urls')),
 	url(r'^', include('pages.urls')),
    url(r'^', Index.as_view(), name='index'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

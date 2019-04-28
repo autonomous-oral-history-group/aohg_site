@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles', 
 	 'audiofield',
 	 'tinymce',
+	 'tagulous',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -111,6 +112,19 @@ STATICFILES_DIRS = [
 	("assets", os.path.join(BASE_DIR, '../front_end/assets'))
 ]
 
+
+
+SERIALIZATION_MODULES = {
+    'xml':    'tagulous.serializers.xml_serializer',
+    'json':   'tagulous.serializers.json',
+    'python': 'tagulous.serializers.python',
+    'yaml':   'tagulous.serializers.pyyaml',
+} 
+
+
+TAGULOUS_NAME_MAX_LENGTH = 255
+TAGULOUS_SLUG_MAX_LENGTH = 50
+TAGULOUS_LABEL_MAX_LENGTH = TAGULOUS_NAME_MAX_LENGTH
 
 
 #-----

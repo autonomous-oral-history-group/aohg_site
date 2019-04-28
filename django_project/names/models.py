@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.db import models
 from tinymce.models import HTMLField 
 from django.utils.text import slugify
+import tagulous.models
 
 # Create your models here.
 
@@ -22,7 +23,8 @@ class Name(models.Model):
 		null=True, \
 		max_length=160,
 	) 
-
+	#keywords = tagulous.models.TagField(related_name="keyword")
+	keywords = models.ManyToManyField('Keyword', related_name="keyword", blank=True)
 
 	@property
 	def recordings(self):
@@ -38,4 +40,5 @@ class Name(models.Model):
 	def __repr__(self):
 		return self.name
 	
-		
+class Keyword (tagulous.models.TagModel):
+	pass
