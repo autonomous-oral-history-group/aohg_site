@@ -5,7 +5,7 @@
 {% block 'middle_content' %}
 	<section class=""> 
 		<div class="logo aohg_logo">Autonomous Oral History Group</div>
-		<h1 class="title is-1">Names</h1>
+		<h1 class="title is-1">Subjects</h1>
 
 		{% for subject in subjects %}
 			<a href="{% url 'subject_detail' subject.slug %}">
