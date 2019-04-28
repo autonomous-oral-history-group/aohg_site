@@ -5,19 +5,19 @@
 {% block 'middle_content' %}
 	<section class=""> 
 		<div class="logo aohg_logo">Autonomous Oral History Group</div>
-		<h1 class="title is-1">{{ keyword.name }}</h1>
+		<h1 class="title is-1">{{ subject.name }}</h1>
 
-		<div class="keyword-detail__names">
-		{% for name in names %} 
+		<div class="subject-detail__names">
+			{% for name in names %} 
 			<a href="{% url 'name_detail' name.slug %}">
 				<h2 class="subtitle is-4">{{ name.name }}</h2> 
 			</a> 
-		{% endfor %}
+			{% endfor %}
 		</div>
 {% endblock %}
 
 
 {% block 'right_column' %}
-	<div class="keyword-detail">
+	<div class="subject-detail">
 	</div>
 {% endblock %}

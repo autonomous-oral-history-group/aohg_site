@@ -23,8 +23,8 @@ class Name(models.Model):
 		null=True, \
 		max_length=160,
 	) 
-	#keywords = tagulous.models.TagField(related_name="keyword")
-	keywords = models.ManyToManyField('Keyword', related_name="keyword", blank=True)
+	#subjects = tagulous.models.TagField(related_name="subject")
+	subjects = models.ManyToManyField('Subject', related_name="subject", blank=True)
 
 	@property
 	def recordings(self):
@@ -40,5 +40,11 @@ class Name(models.Model):
 	def __repr__(self):
 		return self.name
 	
-class Keyword (tagulous.models.TagModel):
-	pass
+class Subject (tagulous.models.TagModel):
+	
+	def __str__(self):
+		return self.name
+		
+	def __repr__(self):
+		return self.name
+

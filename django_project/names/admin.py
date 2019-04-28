@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-from .models import Name, Keyword
+from .models import Name, Subject
 #from .models import Name
 from recordings.models import Recording
 
@@ -19,8 +19,8 @@ class RecordingInline(admin.StackedInline):
 	model = Recording
 	extra = 0
 
-class KeywordInline(admin.StackedInline):
-	model = Keyword
+class SubjectInline(admin.StackedInline):
+	model = Subject
 	extra = 0
 
 class NameAdmin(admin.ModelAdmin):
@@ -35,7 +35,7 @@ class NameAdmin(admin.ModelAdmin):
 		'access_conditions', \
 		'created_published_by', \
 		'extent', \
-		'keywords'
+		'subjects'
 	]
 
 	list_display = [ \
@@ -44,14 +44,14 @@ class NameAdmin(admin.ModelAdmin):
 
 	inlines = [ 
 		RecordingInline,
-		#KeywordInline,
+		#SubjectInline,
 	]
 
 #import pdb; pdb.set_trace()
 #tagulous.admin.register(Name, NameAdmin)
-#tag_enhance(Keyword, KeywordInline)
-#tag_enhance(Keyword, KeywordAdmin)
+#tag_enhance(Subject, SubjectInline)
+#tag_enhance(Subject, SubjectAdmin)
 #tag_enhance(Name, NameAdmin)
 tagulous.admin.register(models.Name)
-tagulous.admin.register(models.Keyword)
-#admin.site.register(Keyword, KeywordAdmin)
+tagulous.admin.register(models.Subject)
+#admin.site.register(Subject, SubjectAdmin)

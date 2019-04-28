@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import Name, Keyword
+from .models import Name, Subject
 from sidebars.models import Sidebar
 
 
@@ -29,18 +29,19 @@ class NameDetail(DetailView):
 	template_name = 'names/name_detail.html'
 	context_object_name = 'name'
 
-class KeywordList(ListView):
-	model = Keyword
-	template_name = 'keywords/keyword_list.html'
-	context_object_name = 'keywords' 
+class SubjectList(ListView):
+	model = Subject
+	template_name = 'subjects/subject_list.html'
+	context_object_name = 'subjects' 
 
-class KeywordDetail(DetailView):
-	model = Keyword
-	template_name = 'keywords/keyword_detail.html'
-	context_object_name = 'keyword' 
+class SubjectDetail(DetailView):
+	model = Subject
+	template_name = 'subjects/subject_detail.html'
+	context_object_name = 'subject' 
 
 	def get_context_data(self, **kwargs):
-		context = super(KeywordDetail, self).get_context_data(**kwargs) 
-		context['names'] = Name.objects.filter(keywords__slug=self.object.slug)
+		context = super(SubjectDetail, self).get_context_data(**kwargs) 
+		filter_slug = self.object.slug
+		context['names'] = Name.objects.filter(subjects__slug=filter_slug )
 		return context
 

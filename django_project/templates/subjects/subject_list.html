@@ -7,9 +7,9 @@
 		<div class="logo aohg_logo">Autonomous Oral History Group</div>
 		<h1 class="title is-1">Names</h1>
 
-		{% for keyword in keywords %}
-			<a href="{% url 'keyword_detail' keyword.slug %}">
-				<h2 class="subtitle is-4">{{ keyword.name }}</h2> 
+		{% for subject in subjects %}
+			<a href="{% url 'subject_detail' subject.slug %}">
+				<h2 class="subtitle is-4">{{ subject.name }}</h2> 
 			</a>
 		{% endfor %} 
 	</section> 
