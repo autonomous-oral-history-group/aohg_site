@@ -47,11 +47,5 @@ class NameAdmin(admin.ModelAdmin):
 		#SubjectInline,
 	]
 
-#import pdb; pdb.set_trace()
-#tagulous.admin.register(Name, NameAdmin)
-#tag_enhance(Subject, SubjectInline)
-#tag_enhance(Subject, SubjectAdmin)
-#tag_enhance(Name, NameAdmin)
 tagulous.admin.register(models.Name)
 tagulous.admin.register(models.Subject)
-#admin.site.register(Subject, SubjectAdmin)

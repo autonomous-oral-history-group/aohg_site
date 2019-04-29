@@ -31,8 +31,9 @@ class Name(models.Model):
 		return self.recording_set.all()
 
 	def save(self, *args, **kwargs):
-		#if len(self.slug <= 0):
-			#self.slug = slugify(name)
+		# If there isn't a slug, make it
+		if (self.slug is None):
+			self.slug = slugify(self.name)
 		super(Name, self).save(*args, **kwargs)
 	def __str__(self):
 		return self.name
