@@ -21,15 +21,7 @@ APPEND_SLASH = True
 
 WSGI_APPLICATION = 'django_project.wsgi.application'
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' 
-
-AWS_ACCESS_KEY_ID = get_env_variable('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = get_env_variable('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = get_env_variable('AWS_STORAGE_BUCKET_NAME ')
-AWS_S3_REGION_NAME = get_env_variable('AWS_S3_REGION_NAME ')
-AWS_S3_ENDPOINT_URL = get_env_variable('AWS_S3_ENDPOINT_URL ')
-
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases 
@@ -43,3 +35,25 @@ DATABASES = {
         'PORT': '',
     }
 } 
+
+
+AWS_ACCESS_KEY_ID = get_env_variable('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = get_env_variable('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = get_env_variable('AWS_STORAGE_BUCKET_NAME ')
+AWS_S3_REGION_NAME = get_env_variable('AWS_S3_REGION_NAME ')
+AWS_S3_ENDPOINT_URL = get_env_variable('AWS_S3_ENDPOINT_URL ')
+
+
+
+
+S3_URL = 'http://%s%s/' % (AWS_STORAGE_BUCKET_NAME, AWS_S3_ENDPOINT_URL) 
+
+#MEDIA_URL = '/media/'
+MEDIA_URL = '%smedia/' % S3_URL
+
+
+MEDIA_ROOT = 'media/'
+
+
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'django_project.settings.storage_backends.MediaStorage'
