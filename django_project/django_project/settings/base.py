@@ -49,6 +49,7 @@ INSTALLED_APPS = (
 	 'audiofield',
 	 'tinymce',
 	 'tagulous',
+	 'storages',
 )
 
 MIDDLEWARE_CLASSES = (
