@@ -35,6 +35,7 @@ class Name(models.Model):
 		if (self.slug is None):
 			self.slug = slugify(self.name)
 		super(Name, self).save(*args, **kwargs)
+
 	def __str__(self):
 		return self.name
 		

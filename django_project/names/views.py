@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Name, Subject
 from sidebars.models import Sidebar
+from django.db.models.functions import Lower
 
 
 # Create your views here.
@@ -13,14 +14,14 @@ class NamesList(ListView):
 	model = Name
 	template_name = 'names/name_list.html'
 	context_object_name = 'names'
-	ordering = 'name'
-	paginate_by = 100
+	paginate_by = 200
 
 	def get_sidebar_general_page(self):
 		return Sidebar.objects.get(title='General')
 
 	def get_context_data(self, **kwargs):
 		context = super(NamesList, self).get_context_data(**kwargs) 
+		context['names'] = Name.objects.all().annotate(name_lower=Lower('name')).order_by('name_lower')
 		context['sidebar'] = self.get_sidebar_general_page()
 		return context 
 
@@ -34,7 +35,12 @@ class SubjectList(ListView):
 	model = Subject
 	template_name = 'subjects/subject_list.html'
 	context_object_name = 'subjects' 
-	ordering = 'name'
+	paginate_by = 200
+
+	def get_context_data(self, **kwargs):
+		context = super(SubjectList, self).get_context_data(**kwargs)
+		context['subjects'] = Subject.objects.all().annotate(name_lower=Lower('name')).order_by('name_lower')
+		return context
 
 class SubjectDetail(DetailView):
 	model = Subject
