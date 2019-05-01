@@ -44,8 +44,6 @@ class NameAdmin(admin.ModelAdmin):
 
 	inlines = [ 
 		RecordingInline,
-		#SubjectInline,
 	]
 
-tagulous.admin.register(models.Name)
-tagulous.admin.register(models.Subject)
+admin.site.register(Name, NameAdmin)
