@@ -20,7 +20,9 @@ The following environment variables are used to configure installs. I recommend 
  - `DATABASE_USER`
  - `DATABASE_PASSWORD`
 
-`DJANGO_SETTINGS_MODULE` should probably equal `django_project.settings` if you want to use [django-admin](https://docs.djangoproject.com/en/1.11/ref/django-admin/). Not required.
+`DJANGO_SETTINGS_MODULE` should equal `django_project.settings.local` on a local install, and `django_project.settings.production` on production. Easy!
+
+If you want to use [django-admin](https://docs.djangoproject.com/en/1.11/ref/django-admin/), you need to add the first `django_project` directory to your Python path. If using `virtualenvwrapper`, you can do that with the [`add2virtualenv` command](https://virtualenvwrapper.readthedocs.io/en/latest/command_ref.html#add2virtualenv). Not required.
 
 # Install django-audiofield
 
@@ -40,4 +42,33 @@ According to django-audiofield, it depends on:
  - `libav-tools` : `brew install libav`
 
 
+In order to get `django-audiofield` playing nice with `django-storages`, I commented out a couple methods in the `django-audiofield` install, as [mentioned in a comment here](https://github.com/areski/django-audiofield/issues/21).
 
+
+# Production installs
+
+Using the [DigitalOcean one click install](https://www.digitalocean.com/products/one-click-apps/django/), environment variables should be set using [systemd Environment directives](https://coreos.com/os/docs/latest/using-environment-variables-in-systemd-units.html)
+
+## Setting environment variables
+There are a few more environment variables that need to be defined in Production to [django-storages](https://django-storages.readthedocs.io/en/latest/backends/digital-ocean-spaces.html) to play nicely with [Digital Ocean Spaces](https://www.digitalocean.com/docs/spaces/) (their equivalend of Amazon S3, which S3 also supports):
+
+```
+Environment=DJANGO_SECRET_KEY=SECRET_KEY
+Environment=DATABASE_NAME=DB_NAME
+Environment=DATABASE_USER=DB_USER
+Environment=DATABASE_PASSWORD=DATABASE_PASS
+Environment=DJANGO_SETTINGS_MODULE=django_project.settings.production 
+Environment=AWS_ACCESS_KEY_ID='ACCESS_ID_HERE'
+Environment=AWS_SECRET_ACCESS_KEY='SECRET_KEY_HERE'
+Environment=AWS_STORAGE_BUCKET_NAME=XXX
+Environment=AWS_S3_REGION_NAME=sfo2
+Environment=AWS_S3_ENDPOINT_URL=https://sfo2.digitaloceanspaces.com
+Environment=AWS_S3_CUSTOM_DOMAIN=XXX.sfo2.digitaloceanspaces.com
+```
+
+These should be set in `/etc/systemd/system/gunicorn.service`.
+
+Once you change these, enter the command:
+`systemctl daemon-reload && systemctl restart gunicorn`
+
+In retrospect, a Docker image would've been a little easier to spin up.
