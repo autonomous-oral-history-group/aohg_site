@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %}{% endblock %} - Autonomous Oral History Group</title>
+    <title>{% block 'title' %}{% endblock %} - Autonomous Oral History Group</title>
     <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -25,7 +25,12 @@
 					{% include 'blocks/nav.html' %}
 				{% endblock 'navigation' %}
 			 </div>
-			 <div class="column is-6 ">
+			 <div class="column is-6 "> 
+				<header>
+					<div class="logo aohg_logo">Autonomous Oral History Group</div>
+				</header>
+				{% block 'back_link' %}{% endblock %}
+				<h1 class="title is-1">{% block 'page_title' %}{% endblock 'page_title' %}</h1>
 				 {% block 'middle_content' %}
 				 {% endblock 'middle_content' %}
 			 </div>

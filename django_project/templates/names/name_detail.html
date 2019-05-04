@@ -1,31 +1,71 @@
 {% extends '../base.html' %}
 
-{% block 'title' %}Names -{% endblock %}
+{% block 'title' %}{{ name.name }}{% endblock %}
+{% block 'page_title' %}{{ name.name }}{% endblock %}
 
-{% block 'middle_content' %}
-	<section class=""> 
-		<div class="logo aohg_logo">Autonomous Oral History Group</div>
-		<h1 class="title is-1">{{ name.name }}</h1>
+{% block 'back_link' %}
+	<a class="back-arrow" href="{% url 'names_list'  %}">&larr; Back to all names</a>
+{% endblock %}
 
-		<div class="name-detail__location-call">
-			Call Number: {{ name.call_number }}
-		</div>
-		<div class="name-detail__location-call">
-		 Location: {{ name.location | safe }} 
-		</div>
-		<div class="name-detail__summary">
-			{{ name.summary | safe }} 
-		</div>
-		<div class="name-detail__summary name-detail__summary--archivist">
-			{{ name.archivist_summary | safe }} 
-		</div>
-		<div class="name-detail__created-published-by">
-			Created / Published by: {{ name.created_published_by }}
-		</div>
+{% block 'middle_content' %} 
+	<section class="name-detail"> 
 
-		<div class="name-detail__extent">
+		{% if name.call_number %}
+			<div class="name_detail__field name-detail__location-call">
+				<span  class="name_detail__title--inline">Call Number:</span> {{ name.call_number }}
+			</div>
+		{% endif %}
+
+		{% if name.location %}
+			<div class="name_detail__field name-detail__location-call">
+			 Location: {{ name.location | safe }} 
+			</div>
+		{% endif %}
+
+		{% if name.summary %}
+			<div class="name_detail__field name-detail__summary">
+				{{ name.summary | safe }} 
+			</div>
+		{% endif %}
+
+
+		{% if name.archivist_summary %}
+			<h2 class="name_detail__title">Archivist Summary</h2>
+			<div class="name_detail__field name-detail__summary name-detail__summary--archivist"> 
+				{{ name.archivist_summary | safe }} 
+			</div>
+		{% endif %}
+
+		{% if name.created_published_by %}
+			<h2 class="name_detail__title">Created / Published</h2>
+			<div class="name_detail__field name-detail__created-published-by">
+				{{ name.created_published_by }}
+			</div>
+		{% endif %}
+
+		{% if name.access_conditions %}
+			<h2 class="name_detail__title">Access Condtions</h2>
+			<div class="name_detail__field name-detail__access-conditions">
+				{{ name.access_conditions }}
+			</div>
+		{% endif %}
+
+		{% if name.extent %}
+		<div class="name_detail__field name-detail__extent">
 			Extent: {{ name.extent | safe}}
 		</div>
+		{% endif %}
+
+		{% if name.subjects %}
+			<h2 class="name_detail__title">Subjects</h2>
+		<div class="name_detail__field name-detail__subject-list">
+
+			{% for subject in name.subjects.all %}
+				<a class="name-detail__subject" href="{% url 'subject_detail' subject.slug %}">{{ subject.name}}</a>.
+			{% endfor %}
+		</div>
+		{% endif %}
+
 	</section> 
 {% endblock %}
 
@@ -34,10 +74,10 @@
 	<div class="name-detail__recording-list">
 	{% for recording in name.recordings %}
 		<div class="recording"> 
-			{{ recording.title }} 
 			{% if recording.audio_file %}
 				{{ recording.audio_file_player | safe }}
 			{% endif %}
+			{{ recording.title }} 
 		</div>
 	{% endfor %}
 	</div>

@@ -1,19 +1,20 @@
 {% extends '../base.html' %}
 
-{% block 'title' %}Names -{% endblock %}
+{% block 'title' %}{{ subject.name }}{% endblock %}
+{% block 'page_title' %}{{ subject.name }}{% endblock %}
+
+{% block 'back_link' %}
+	<a class="back-arrow" href="{% url 'subject_list'  %}">&larr; Back to all subjects</a>
+{% endblock %}
 
 {% block 'middle_content' %}
-	<section class=""> 
-		<div class="logo aohg_logo">Autonomous Oral History Group</div>
-		<h1 class="title is-1">{{ subject.name }}</h1>
-
-		<div class="subject-detail__names">
-			{% for name in names %} 
-			<a href="{% url 'name_detail' name.slug %}">
+	<section class="subject-detail__names-list"> 
+		{% for name in names %} 
+			<a class="subject-detail__name" href="{% url 'name_detail' name.slug %}">
 				<h2 class="subtitle is-4">{{ name.name }}</h2> 
 			</a> 
-			{% endfor %}
-		</div>
+		{% endfor %}
+	</section>
 {% endblock %}
 
 
