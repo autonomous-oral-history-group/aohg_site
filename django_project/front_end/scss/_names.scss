@@ -3,6 +3,26 @@
 }
 
 
+.name-detail__field{
+	margin-top: 1.5em; 
+
+	&:first{
+		margin-top: 0; 
+	}
+}
+
+.name-detail__title{
+	text-transform: uppercase; 
+}
+
+.name-detail__field-body{
+}
+
+.name-detail__subject{
+	display: block;
+
+}
+
 
 .name-detail__location-call{ 
 }

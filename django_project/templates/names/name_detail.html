@@ -11,58 +11,76 @@
 	<section class="name-detail"> 
 
 		{% if name.call_number %}
-			<div class="name_detail__field name-detail__location-call">
-				<span  class="name_detail__title--inline">Call Number:</span> {{ name.call_number }}
+			<div class="name-detail__field">
+				<div class="name-detail__field-body__body__body name-detail__location-call">
+					<span  class="name-detail__title--inline">Call Number:</span> {{ name.call_number }}
+				</div>
 			</div>
 		{% endif %}
 
 		{% if name.location %}
-			<div class="name_detail__field name-detail__location-call">
-			 Location: {{ name.location | safe }} 
+			<div class="name-detail__field">
+				<h2 class="name-detail__title">Location</h2>
+				<div class="name-detail__field-body name-detail__location-call">
+				 {{ name.location | safe }} 
+				</div>
 			</div>
 		{% endif %}
 
 		{% if name.summary %}
-			<div class="name_detail__field name-detail__summary">
+			<div class="name-detail__field">
+			<h2 class="name-detail__title">Summary</h2>
+			<div class="name-detail__field-body name-detail__summary">
 				{{ name.summary | safe }} 
+			</div>
 			</div>
 		{% endif %}
 
 
 		{% if name.archivist_summary %}
-			<h2 class="name_detail__title">Archivist Summary</h2>
-			<div class="name_detail__field name-detail__summary name-detail__summary--archivist"> 
-				{{ name.archivist_summary | safe }} 
+			<div class="name-detail__field">
+				<h2 class="name-detail__title">Archivist Summary</h2>
+				<div class="name-detail__field-body name-detail__summary name-detail__summary--archivist"> 
+					{{ name.archivist_summary | safe }} 
+				</div>
 			</div>
 		{% endif %}
 
 		{% if name.created_published_by %}
-			<h2 class="name_detail__title">Created / Published</h2>
-			<div class="name_detail__field name-detail__created-published-by">
-				{{ name.created_published_by }}
+			<div class="name-detail__field">
+				<h2 class="name-detail__title">Created / Published</h2>
+				<div class="name-detail__field-body name-detail__created-published-by">
+					{{ name.created_published_by }}
+				</div>
 			</div>
 		{% endif %}
 
 		{% if name.access_conditions %}
-			<h2 class="name_detail__title">Access Condtions</h2>
-			<div class="name_detail__field name-detail__access-conditions">
-				{{ name.access_conditions }}
+			<div class="name-detail__field">
+				<h2 class="name-detail__title">Access Condtions</h2>
+				<div class="name-detail__field-body name-detail__access-conditions">
+					{{ name.access_conditions }}
+				</div>
 			</div>
 		{% endif %}
 
 		{% if name.extent %}
-		<div class="name_detail__field name-detail__extent">
-			Extent: {{ name.extent | safe}}
+		<div class="name-detail__field"> 
+			<h2 class="name-detail__title">Extent</h2>
+			<div class="name-detail__field-body name-detail__extent">
+				{{ name.extent | safe}}
+			</div>
 		</div>
 		{% endif %}
 
 		{% if name.subjects %}
-			<h2 class="name_detail__title">Subjects</h2>
-		<div class="name_detail__field name-detail__subject-list">
-
-			{% for subject in name.subjects.all %}
-				<a class="name-detail__subject" href="{% url 'subject_detail' subject.slug %}">{{ subject.name}}</a>.
-			{% endfor %}
+		<div class="name-detail__field"> 
+			<h2 class="name-detail__title">Subjects</h2>
+			<div class="name-detail__field-body name-detail__subject-list"> 
+				{% for subject in name.subjects.all %}
+					<a class="name-detail__subject" href="{% url 'subject_detail' subject.slug %}">{{ subject.name}}.</a>
+				{% endfor %}
+			</div>
 		</div>
 		{% endif %}
 

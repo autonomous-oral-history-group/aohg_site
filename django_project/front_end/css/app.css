@@ -7061,5 +7061,16 @@ p {
 .sidebar {
   font-size: 1.3rem; }
 
+.name-detail__field {
+  margin-top: 1.5em; }
+  .name-detail__field:first {
+    margin-top: 0; }
+
+.name-detail__title {
+  text-transform: uppercase; }
+
+.name-detail__subject {
+  display: block; }
+
 .name-detail p {
   font-size: 1.05rem; }
