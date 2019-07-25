@@ -9,12 +9,14 @@
 
     <title>{% block 'title' %}{% endblock %} - Autonomous Oral History Group</title>
     <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
     <!-- Bulma Version 0.7.4-->
     <link rel="stylesheet" href="{% static 'css/app.css' %}" />
     <style type="text/css">
     </style>
+
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
 </head>
 
 <body>
@@ -22,12 +24,12 @@
 		 <div class="columns">
 			  <div class="column is-3 navigation">
 				{% block 'navigation' %}
-					{% include 'blocks/nav.html' %}
+					{% include 'blocks/nav.html' with menu_selected=menu %}
 				{% endblock 'navigation' %}
 			 </div>
 			 <div class="column is-6 "> 
 				<header>
-					<div class="logo aohg_logo">Autonomous Oral History Group</div>
+				<a href="{% url 'index'  %}"><div class="logo aohg_logo">Autonomous Oral History Group</div></a>
 				</header>
 				{% block 'back_link' %}{% endblock %}
 				<h1 class="title is-1">{% block 'page_title' %}{% endblock 'page_title' %}</h1>
