@@ -23,12 +23,18 @@ class NamesList(ListView):
 		context = super(NamesList, self).get_context_data(**kwargs) 
 		context['names'] = Name.objects.all().annotate(name_lower=Lower('name')).order_by('name_lower')
 		context['sidebar'] = self.get_sidebar_general_page()
+		context['menu'] = 'names'
 		return context 
 
 class NameDetail(DetailView):
 	model = Name
 	template_name = 'names/name_detail.html'
 	context_object_name = 'name'
+
+	def get_context_data(self, **kwargs):
+		context = super(NameDetail, self).get_context_data(**kwargs)
+		context['menu'] = 'names'
+		return context
 
 
 class SubjectList(ListView):
@@ -40,6 +46,7 @@ class SubjectList(ListView):
 	def get_context_data(self, **kwargs):
 		context = super(SubjectList, self).get_context_data(**kwargs)
 		context['subjects'] = Subject.objects.all().annotate(name_lower=Lower('name')).order_by('name_lower')
+		context['menu'] = 'subjects'
 		return context
 
 class SubjectDetail(DetailView):
@@ -51,5 +58,6 @@ class SubjectDetail(DetailView):
 		context = super(SubjectDetail, self).get_context_data(**kwargs) 
 		filter_slug = self.object.slug
 		context['names'] = Name.objects.filter(subjects__slug=filter_slug )
+		context['menu'] = 'subjects'
 		return context
 

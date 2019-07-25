@@ -20,6 +20,11 @@ class PageDetail(DetailView):
 	template_name = 'pages/page_detail.html'
 	context_object_name = 'page' 
 
+	def get_context_data(self, **kwargs):
+		context = super(PageDetail, self).get_context_data(**kwargs)
+		context['menu'] = self.get_object().slug
+		return context
+
 class Index(TemplateView):
 	model = Page
 	template_name = 'pages/page_detail.html'
@@ -28,6 +33,7 @@ class Index(TemplateView):
 	def get_context_data(self, **kwargs):
 		context = super(Index, self).get_context_data(**kwargs)
 		context['page'] = Page.objects.get(slug='about') 
+		context['menu'] = 'about'
 		return context
 
 

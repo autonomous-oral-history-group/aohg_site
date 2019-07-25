@@ -1,22 +1,27 @@
 <ul class="menu-list">
-	<li class=""><a href="{% url 'index'  %}">Home</a></li>
-	<li><a>Browse</a></li>
-	  <ul >
+	<li><a class="browse">Browse</a>
+	  <ul class="level-two is-hidden">
 			<li>
-				<a href="{% url 'names_list'  %}" class="is-active">Names</a>
+				
+				<a href="{% url 'names_list'  %}" class="{% if menu_selected == 'names' %}is-active{% endif %}">Names</a>
 			</li>
 			<li>
-				<a href="{% url 'subject_list'  %}" class="">Subjects</a>
+				<a href="{% url 'subject_list'  %}" class="{% if menu_selected == 'subjects' %}is-active{% endif %}">Subjects</a>
 			</li>
 	  </ul>
+	 </li> 
+
 	<li>
-		<a href="{% url 'page_detail' 'request'  %}">Request</a>
+		<a href="{% url 'page_detail' 'request'  %}" class="{% if menu_selected == 'request' %}is-active{% endif %}" >Request</a>
 	</li>
+
 	<li>
-		<a href="{% url 'index'  %}">About</a>
+		<a href="{% url 'index'  %}" class="{% if request.path == '/' %}is-active{% endif %}">About</a>
 	</li>
-	<li><a href="{% url 'page_detail' 'terms'  %}">Terms</a></li>
-	<li><a href="{% url 'page_detail' 'ethics-board'  %}">Ethics Board</a></li>
+
+	<li><a href="{% url 'page_detail' 'terms'  %}" class="{% if menu_selected == 'terms' %}is-active{% endif %}">Terms</a></li>
+
+	<li><a href="{% url 'page_detail' 'ethics-board'  %}" class="{% if menu_selected == 'ethics-board' %}is-active{% endif %}">Ethics Board</a></li>
 </ul>
 
 
