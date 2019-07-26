@@ -24,13 +24,14 @@ gulp.task('sass', function () {
 });
  
 gulp.task('watch', function () {
-  gulp.watch('./src/styles/**/*.scss', ['sass']);
+  gulp.watch('./scss/**/*.scss', gulp.series(['sass']));
+  gulp.watch('./app/**/*.js', gulp.series(['js']));
 });
 
 
 //https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-with-globs.md
 gulp.task('js', function () {
-	return gulp.src('app/**/*.js', {read: false})
+	return gulp.src('app/index.js', {read: false})
     // transform file objects using gulp-tap plugin
     .pipe(tap(function (file) {
 

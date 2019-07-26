@@ -1,6 +1,9 @@
+<script>
+	window.menu_selected = {{ test }};
+</script>
 <ul class="menu-list">
-	<li><a class="browse">Browse</a>
-	  <ul class="level-two is-hidden">
+	<li id="browse-level-two"><a class="browse" v-on:click="toggleVisibility($event)">Browse</a>
+		<ul class="level-two" v-bind:class="{'is-hidden': isHidden}">
 			<li>
 				
 				<a href="{% url 'names_list'  %}" class="{% if menu_selected == 'names' %}is-active{% endif %}">Names</a>
@@ -8,8 +11,9 @@
 			<li>
 				<a href="{% url 'subject_list'  %}" class="{% if menu_selected == 'subjects' %}is-active{% endif %}">Subjects</a>
 			</li>
-	  </ul>
-	 </li> 
+	  	
+		  </ul>
+		</li> 
 
 	<li>
 		<a href="{% url 'page_detail' 'request'  %}" class="{% if menu_selected == 'request' %}is-active{% endif %}" >Request</a>
