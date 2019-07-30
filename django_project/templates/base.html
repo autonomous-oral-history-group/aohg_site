@@ -22,12 +22,12 @@
 <body>
 	<div class="container page">
 		 <div class="columns">
-			  <div class="column is-3 navigation">
+			  <div class="column is-12-mobile is-3-desktop navigation">
 				{% block 'navigation' %}
 					{% include 'blocks/nav.html' with menu_selected=menu %}
 				{% endblock 'navigation' %}
 			 </div>
-			 <div class="column is-6 "> 
+			 <div class="column is-6 primary-content"> 
 				<header>
 				<a href="{% url 'index'  %}"><div class="logo aohg_logo">Autonomous Oral History Group</div></a>
 				</header>
@@ -36,7 +36,7 @@
 				 {% block 'middle_content' %}
 				 {% endblock 'middle_content' %}
 			 </div>
-			 <div class="column is-3">
+			 <div class="column is-3 sidebar">
 				 {% block 'right_column' %}
 					 <p> </p>
 				 {% endblock 'right_column' %}

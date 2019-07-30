@@ -1,31 +1,38 @@
 <script>
 	window.menu_selected = {{ test }};
 </script>
-<ul class="menu-list">
-	<li id="browse-level-two"><a class="browse" v-on:click="toggleVisibility($event)">Browse</a>
-		<ul class="level-two" v-bind:class="{'is-hidden': isHidden}">
-			<li>
-				
-				<a href="{% url 'names_list'  %}" class="{% if menu_selected == 'names' %}is-active{% endif %}">Names</a>
-			</li>
-			<li>
-				<a href="{% url 'subject_list'  %}" class="{% if menu_selected == 'subjects' %}is-active{% endif %}">Subjects</a>
-			</li>
-	  	
-		  </ul>
-		</li> 
+<nav class="navigation">
+	<input class="menu_check menu__check" type="checkbox" />
+	<svg class="menu_button menu__button" width="40" height="40">
+		<rect x='0' y='0' width='40' height='4' viewBox="-20 -2 40 4" />
+		<rect x='0' y='15' width='40' height='4'  />
+		<rect x='0' y='30' width='40' height='4'  />
+	</svg>	
+	<ul class="menu-list menu">
+		<li id="browse-level-two"><a class="browse" v-on:click="toggleVisibility($event)">Browse</a>
+			<ul class="level-two" v-bind:class="{'is-hidden': isHidden}">
+				<li>
+					
+					<a href="{% url 'names_list'  %}" class="{% if menu_selected == 'names' %}is-active{% endif %}">Names</a>
+				</li>
+				<li>
+					<a href="{% url 'subject_list'  %}" class="{% if menu_selected == 'subjects' %}is-active{% endif %}">Subjects</a>
+				</li>
+		  	
+			  </ul>
+			</li> 
 
-	<li>
-		<a href="{% url 'page_detail' 'request'  %}" class="{% if menu_selected == 'request' %}is-active{% endif %}" >Request</a>
-	</li>
+		<li>
+			<a href="{% url 'page_detail' 'request'  %}" class="{% if menu_selected == 'request' %}is-active{% endif %}" >Request</a>
+		</li>
 
-	<li>
-		<a href="{% url 'index'  %}" class="{% if request.path == '/' %}is-active{% endif %}">About</a>
-	</li>
+		<li>
+			<a href="{% url 'index'  %}" class="{% if request.path == '/' %}is-active{% endif %}">About</a>
+		</li>
 
-	<li><a href="{% url 'page_detail' 'terms'  %}" class="{% if menu_selected == 'terms' %}is-active{% endif %}">Terms</a></li>
+		<li><a href="{% url 'page_detail' 'terms'  %}" class="{% if menu_selected == 'terms' %}is-active{% endif %}">Terms</a></li>
 
-	<li><a href="{% url 'page_detail' 'ethics-board'  %}" class="{% if menu_selected == 'ethics-board' %}is-active{% endif %}">Ethics Board</a></li>
-</ul>
-
+		<li><a href="{% url 'page_detail' 'ethics-board'  %}" class="{% if menu_selected == 'ethics-board' %}is-active{% endif %}">Ethics Board</a></li>
+	</ul>
+</nav>
 

@@ -7028,6 +7028,11 @@ p {
   font-weight: 400;
   color: black; }
 
+.logo {
+  position: fixed;
+  top: 5px;
+  max-width: calc(100% - 60px); }
+
 .navigation ul.menu-list {
   border-left: none;
   line-height: .15rem; }
@@ -7062,6 +7067,86 @@ p {
 	*/ }
     .navigation ul.menu-list li a:active {
       text-decoration: none; }
+
+@media only screen and (max-width: 769px) {
+  /* heavily inspired by https://codepen.io/erikterwan/pen/EVzeRP 
+	   rewritten for SVG icons tho 
+	*/
+  /* invisible input item that is over the hamburger menu */
+  .menu__check {
+    /*removing [type="checkbox"] to remove any specificity*/
+    position: fixed;
+    top: 0;
+    right: 0px;
+    display: block;
+    width: 90px;
+    height: 70px;
+    cursor: pointer;
+    opacity: 0;
+    /* hide the navigation checkbox */
+    z-index: 1000;
+    /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+    /* If the menu button input element is checked */ }
+    .menu__check:checked ~ .menu {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      display: block;
+      height: 100%;
+      width: 100%;
+      opacity: 1;
+      z-index: 30;
+      color: #000;
+      transition: opacity .1s ease-in, height .1s ease-in;
+      overflow-y: auto; }
+    .menu__check:checked ~ .menu_button {
+      /* first burger line angles down at a 45-degree angle*/
+      /* second burger line disappears */
+      /* third burger line angles up at a 45 degree angle*/ }
+      .menu__check:checked ~ .menu_button rect:first-child {
+        transform: translate(5px, 3px) rotate(45deg); }
+      .menu__check:checked ~ .menu_button rect:nth-child(2) {
+        opacity: 0;
+        /*transform: translate(20px, 15px) scale(0);*/ }
+      .menu__check:checked ~ .menu_button rect:nth-child(3) {
+        transform: rotate(-45deg) translate(-20px, -6px);
+        /*fill: red;*/ }
+  .menu_button {
+    /*padding: 10px 10px;*/
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 900; }
+    .menu_button rect {
+      opacity: 1;
+      transition: opacity .1s ease-out, transform .3s ease-out, fill .3s ease-out; }
+  .menu {
+    display: none;
+    height: 0px;
+    width: calc(100% - 30px);
+    opacity: 0;
+    z-index: -5;
+    transition: opacity .1s ease-in, height .2s ease-in;
+    position: sticky;
+    border: 1px solid #000;
+    background-color: #fff; }
+    .menu a {
+      display: block;
+      padding: 15px;
+      color: blue;
+      text-decoration: none;
+      text-align: center;
+      font-size: 50px; }
+    .menu a:first {
+      top: 80px; }
+    .menu a:hover {
+      background: blue;
+      color: white; } }
+
+@media only screen and (min-width: 770px) {
+  input.menu__check, .menu__button {
+    display: none; } }
 
 .sidebar {
   font-size: 1.3rem; }
