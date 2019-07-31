@@ -1,7 +1,7 @@
 
 @font-face {
     font-family:"Utah Condensed Bold";
-    src:url("../assets/fonts/UtahCondensedBold.woff2") format("woff2"),url("../assets/fonts/UtahCondensedBold.woff") format("woff"),url("../assets/fonts/UtahCondensedBold.otf") format("opentype");
+    src:url("../assets/fonts/UtahCondensedBold.woff") format("woff"),url("../assets/fonts/UtahCondensedBold.otf") format("opentype");
     font-style:normal;font-weight:400;
 }
         

@@ -1,7 +1,7 @@
 
 @font-face {
     font-family:"Utah BoldOblique";
-    src:url("../assets/fonts/UtahBoldOblique.woff2") format("woff2"),url("../assets/fonts/UtahBoldOblique.woff") format("woff"),url("../assets/fonts/UtahBoldOblique.otf") format("opentype");
+    src:url("../assets/fonts/UtahBoldOblique.otf") format("opentype");
     font-style:normal;font-weight:400;
 }
         
