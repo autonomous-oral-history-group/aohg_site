@@ -22,7 +22,7 @@
 <body>
 	<div class="container page">
 		 <div class="columns">
-			  <div class="column is-12-mobile is-3-desktop navigation">
+			  <div class="column is-12-mobile is-3-desktop navigation__container">
 				{% block 'navigation' %}
 					{% include 'blocks/nav.html' with menu_selected=menu %}
 				{% endblock 'navigation' %}
@@ -32,7 +32,9 @@
 				<a href="{% url 'index'  %}"><div class="logo aohg_logo">Autonomous Oral History Group</div></a>
 				</header>
 				{% block 'back_link' %}{% endblock %}
+
 				<h1 class="title is-1">{% block 'page_title' %}{% endblock 'page_title' %}</h1>
+				
 				 {% block 'middle_content' %}
 				 {% endblock 'middle_content' %}
 			 </div>

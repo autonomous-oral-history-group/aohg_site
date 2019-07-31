@@ -11,7 +11,17 @@ body {
 img {
 }
 
+a{
+	&:link, &:visited{
+		color: $color_primary;
+	}
 
+	&:hover, &:active{
+		color: $color_secondary;
+		cursor: url('/static/assets/cursor.svg') 15 15, url('/static/assets/cursor.svg') 15 15, pointer;
+
+	}
+}
 
 h1{ 
 	font-weight: 400;
@@ -47,14 +57,9 @@ p{
 }
 
 .page {
-	margin-top: 4em;
+	margin-top: $page_top_margin;
 }
 
-
-.logo{ 
-	font-size: 1.85em;
-	margin-bottom: 2em;
-}
 
 .title, .title.is-1{ 
 	font-size: 1.85em;
@@ -68,3 +73,30 @@ p{
 	color: $black;
 
 }
+
+
+.primary-content, .sidebar{
+	a{
+		text-decoration: underline;
+
+
+		&:link, &:visited{
+			color: $color_primary;
+
+			h1,h2,h3,h4,h5,h6{
+				text-decoration: none;
+			}
+		}
+
+		&:hover, &:active{
+			color: $color_secondary;
+
+			h1,h2,h3,h4,h5,h6{
+				color: $color_secondary;
+			}
+		}
+	}
+
+}
+
+
