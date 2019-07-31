@@ -12,7 +12,6 @@
 		<li id="browse-level-two"><a class="browse" v-on:click="toggleVisibility($event)">Browse</a>
 			<ul class="level-two" v-bind:class="{'is-hidden': isHidden}">
 				<li>
-					
 					<a href="{% url 'names_list'  %}" class="{% if menu_selected == 'names' %}is-active{% endif %}">Names</a>
 				</li>
 				<li>

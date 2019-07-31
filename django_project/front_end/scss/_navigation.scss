@@ -1,25 +1,38 @@
-
-
 .logo{
 	position: fixed;
-	top: 5px;
-	max-width: calc(100% - 60px);
+	top: 0px;
+	font-size: 1.85rem;
+	line-height: 1.2em;
+
+	&:hover{
+		color: $color_secondary;
+
+	}
 }
 
-.navigation { 
 
-	ul.menu-list {
-		//margin-left: 2.8em;
-		border-left: none;
-		line-height: .15rem;
+.menu-list {
+	//margin-left: 2.8em;
+	border-left: none;
+	line-height: .15rem;
+}	
 
-		ul{
-			border-left: none; 
-			margin-left: 2em;
-		}
-	}	
+/* have to wrap like this for bulma specificity overrides*/
+.menu-list li ul.level-two{
+	border-left: none; 
+	padding-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
 
-	ul.menu-list li{
+.level-two{
+	//margin-left: 2em;
+}
+
+
+/* have to wrap like this for bulma specificity overrides*/
+.navigation {
+	.menu-list li{
 		font-size: 2.5rem; 
 		margin-top: 0;
 		margin-bottom: 0;
@@ -28,15 +41,16 @@
 
 		a{
 			padding: 0.2em 0em;
-			color: $black;
+			color: $color_primary;
 
 			&.is-active{
 				background-color: transparent;
-				color: $black;
+				color: $color_primary;
 				@include underline()
 			}
 
 			&:hover{
+				color: $color_primary;
 				background-color: transparent;
 				@include underline() 
 			} 
@@ -46,37 +60,63 @@
 			}
 		}
 	}
+
 }
 
-@media only screen and (max-width : 769px){
+/* ----------------------------
+	 MOBILE
+---------------------------*/
+@media only screen and (max-width : $tablet){
 
-
-
-	/* heavily inspired by https://codepen.io/erikterwan/pen/EVzeRP 
-	   rewritten for SVG icons tho 
+	/*
+	--------------------
+	Logo 
+	---------------------
 	*/
+	.logo{
+		font-size: 1.3rem;
+		background-color: $white;
+		width: 100%;
+		padding: $mobile_logo_margin $menu_button_width $mobile_logo_margin $mobile_page_margin;
+	}
+
+	/*
+	--------------------
+	Menu Button
+	Checkbox CSS heavily inspired by https://codepen.io/erikterwan/pen/EVzeRP 
+	---------------------
+	*/
+
+	.menu_button{ 
+		position: fixed;
+		top: 10px;
+		right: 10px;
+		z-index: 900;
+
+		rect{
+			opacity: 1;
+			transition: opacity .1s ease-out, transform .3s ease-out, fill .3s ease-out;
+		}
+	}
+
 	/* invisible input item that is over the hamburger menu */
 	.menu__check{
-		/*removing [type="checkbox"] to remove any specificity*/
+		/*removing [type="checkbox"] to remove any specificity preventing overrides*/
+		opacity: 0; /* hide the navigation checkbox */
+		z-index: 1000; /* and place it over the hamburger */
 		position: fixed;
 		top: 0;
 		right: 0px;
-
 		display: block;
-		width: 90px;
+		width: $menu_button_click_width;
 		height: 70px;
-
-		cursor: pointer; 
-
-		opacity: 0; /* hide the navigation checkbox */
-		z-index: 1000; /* and place it over the hamburger */ 
-	  
-	  -webkit-touch-callout: none;
+		cursor: pointer;
+		-webkit-touch-callout: none;
 
 	  	/* If the menu button input element is checked */
 		&:checked {
-
-			~ .menu{
+			// Menu burger itself, not just the invisible checkbox
+			~ .menu {
 				position: fixed;
 				top: 60px;
 				left: 0;
@@ -90,8 +130,7 @@
 				overflow-y: auto;
 			}
 
-			~ .menu_button{
-
+			~ .menu_button {
 				/* first burger line angles down at a 45-degree angle*/
 			  	rect:first-child {
 					transform: translate(5px, 3px) rotate(45deg);
@@ -109,38 +148,35 @@
 					/*fill: red;*/
 				}
 			}
+
 		}
 	}
 
+	.level-two{
+		padding-left: 0;
+		margin-left: 0;
 
+		li{
+			padding-left: 0;
+			margin-left: 0;
 
-	.menu_button{ 
-		/*padding: 10px 10px;*/
-		position: fixed;
-		top: 10px;
-		right: 10px;
-		z-index: 900;
-
-		rect{
-			opacity: 1;
-			transition: opacity .1s ease-out, transform .3s ease-out, fill .3s ease-out;
 		}
+
 	}
+
 
 
 	
 	.menu{
 		display:none;
 		height: 0px;
-		width: calc(100% - 30px);
+		//width: calc(100% - 30px);
 		opacity: 0;
 		z-index:-5;
 		transition: opacity .1s ease-in, height .2s ease-in;
 		position: sticky;
 		border: 1px solid #000;
 		background-color: #fff;
-
-
 
 		a{
 			display: block;
@@ -163,8 +199,20 @@
 	}
 }
 
-@media only screen and (min-width : 770px){
+/* ----------------------------
+	 DESKTOP
+---------------------------*/
+@media only screen and (min-width : $tablet + 1){
+	.logo{
+		margin-top: $page_top_margin - 0.5em;
+	}
 	input.menu__check, .menu__button{
 		display: none;
 	}
+
+	.navigation{
+		position: sticky;
+		top: $page_top_margin;
+	}
+
 }
