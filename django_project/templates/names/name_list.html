@@ -1,13 +1,16 @@
 {% extends '../base.html' %}
 
 {% block 'title' %}Names{% endblock %}
+
+{% comment %}
 {% block 'page_title' %}Names{% endblock %}
+{% endcomment %}
 
 {% block 'middle_content' %}
 	<section class="names-list"> 
 		{% for name in names %}
-			<a href="{% url 'name_detail' name.slug %}">
-				<h2 class="subtitle is-4">{{ name.name }}</h2> 
+			<a class="list__link" href="{% url 'name_detail' name.slug %}">
+				<h2 class="names-list__name list__link-title">{{ name.name }}</h2> 
 			</a>
 			{{ name.description | safe }} 
 		{% endfor %} 

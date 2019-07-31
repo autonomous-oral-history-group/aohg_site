@@ -1,3 +1,15 @@
 .sidebar{
-	font-size: 1.3rem
+	font-size: 1.3rem;
+	position: sticky;
+	top: 0px;
+}
+
+@media only screen and (max-width : $tablet){
+	.sidebar{
+		border-top: 4px solid black;
+		margin-top: $page_top_margin;
+		margin-left: $mobile_page_margin;
+		margin-right: $mobile_page_margin;
+	}
+
 }

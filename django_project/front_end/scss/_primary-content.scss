@@ -1,0 +1,32 @@
+.primary-content{
+}
+
+@media only screen and (min-width: $tablet){
+	.primary-content{
+		margin-top: $page_top_margin * 2;
+	}
+	
+}
+
+@media only screen and (max-width: $tablet){
+	.primary-content{
+		margin-left: $mobile_page_margin;
+		margin-right: $mobile_page_margin;
+	}
+}
+
+
+.list__link{
+	&:link, &:visited {
+		text-decoration: none;
+	}
+	&:hover, &:active{
+		text-decoration: none;
+	}
+
+}
+
+.list__link-title{
+}
+	
+

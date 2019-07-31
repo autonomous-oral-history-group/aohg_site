@@ -6928,31 +6928,31 @@ label.panel-block {
 
 @font-face {
   font-family: "Utah";
-  src: url("../assets/fonts/Utah.woff2") format("woff2"), url("../assets/fonts/Utah.woff") format("woff"), url("../assets/fonts/Utah.otf") format("opentype");
+  src: url("../assets/fonts/Utah.woff") format("woff"), url("../assets/fonts/Utah.otf") format("opentype");
   font-style: normal;
   font-weight: 400; }
 
 @font-face {
   font-family: "Utah Bold";
-  src: url("../assets/fonts/UtahBold.woff2") format("woff2"), url("../assets/fonts/UtahBold.woff") format("woff"), url("../assets/fonts/UtahBold.otf") format("opentype");
+  src: url("../assets/fonts/UtahBold.woff") format("woff"), url("../assets/fonts/UtahBold.otf") format("opentype");
   font-style: normal;
   font-weight: 400; }
 
 @font-face {
   font-family: "Utah BoldOblique";
-  src: url("../assets/fonts/UtahBoldOblique.woff2") format("woff2"), url("../assets/fonts/UtahBoldOblique.woff") format("woff"), url("../assets/fonts/UtahBoldOblique.otf") format("opentype");
+  src: url("../assets/fonts/UtahBoldOblique.otf") format("opentype");
   font-style: normal;
   font-weight: 400; }
 
 @font-face {
   font-family: "Utah Condensed";
-  src: url("../assets/fonts/UtahCondensed.woff2") format("woff2"), url("../assets/fonts/UtahCondensed.woff") format("woff"), url("../assets/fonts/UtahCondensed.otf") format("opentype");
+  src: url("../assets/fonts/UtahCondensed.woff") format("woff"), url("../assets/fonts/UtahCondensed.otf") format("opentype");
   font-style: normal;
   font-weight: 400; }
 
 @font-face {
   font-family: "Utah Condensed Bold";
-  src: url("../assets/fonts/UtahCondensedBold.woff2") format("woff2"), url("../assets/fonts/UtahCondensedBold.woff") format("woff"), url("../assets/fonts/UtahCondensedBold.otf") format("opentype");
+  src: url("../assets/fonts/UtahCondensedBold.woff") format("woff"), url("../assets/fonts/UtahCondensedBold.otf") format("opentype");
   font-style: normal;
   font-weight: 400; }
 
@@ -6970,12 +6970,14 @@ label.panel-block {
 
 @font-face {
   font-family: "Utah Oblique";
-  src: url("../assets/fonts/UtahOblique.woff2") format("woff2"), url("../assets/fonts/UtahOblique.woff") format("woff"), url("../assets/fonts/UtahOblique.otf") format("opentype");
+  src: url("../assets/fonts/UtahOblique.woff") format("woff"), url("../assets/fonts/UtahOblique.otf") format("opentype");
   font-style: normal;
   font-weight: 400; }
 
 /* Fonts */
 /* Colors */
+/* Layout */
+/* Mobile layout */
 * {
   color: black;
   font-family: "Utah", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
@@ -6984,6 +6986,13 @@ html,
 body {
   font-family: "Utah", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   color: black; }
+
+a:link, a:visited {
+  color: black; }
+
+a:hover, a:active {
+  color: blue;
+  cursor: url("/static/assets/cursor.svg") 15 15, url("/static/assets/cursor.svg") 15 15, pointer; }
 
 h1 {
   font-weight: 400;
@@ -7012,11 +7021,7 @@ p {
   margin-top: .2em; }
 
 .page {
-  margin-top: 4em; }
-
-.logo {
-  font-size: 1.85em;
-  margin-bottom: 2em; }
+  margin-top: 2em; }
 
 .title, .title.is-1 {
   font-size: 1.85em;
@@ -7028,27 +7033,46 @@ p {
   font-weight: 400;
   color: black; }
 
+.primary-content a, .sidebar a {
+  text-decoration: underline; }
+  .primary-content a:link, .primary-content a:visited, .sidebar a:link, .sidebar a:visited {
+    color: black; }
+    .primary-content a:link h1, .primary-content a:link h2, .primary-content a:link h3, .primary-content a:link h4, .primary-content a:link h5, .primary-content a:link h6, .primary-content a:visited h1, .primary-content a:visited h2, .primary-content a:visited h3, .primary-content a:visited h4, .primary-content a:visited h5, .primary-content a:visited h6, .sidebar a:link h1, .sidebar a:link h2, .sidebar a:link h3, .sidebar a:link h4, .sidebar a:link h5, .sidebar a:link h6, .sidebar a:visited h1, .sidebar a:visited h2, .sidebar a:visited h3, .sidebar a:visited h4, .sidebar a:visited h5, .sidebar a:visited h6 {
+      text-decoration: none; }
+  .primary-content a:hover, .primary-content a:active, .sidebar a:hover, .sidebar a:active {
+    color: blue; }
+    .primary-content a:hover h1, .primary-content a:hover h2, .primary-content a:hover h3, .primary-content a:hover h4, .primary-content a:hover h5, .primary-content a:hover h6, .primary-content a:active h1, .primary-content a:active h2, .primary-content a:active h3, .primary-content a:active h4, .primary-content a:active h5, .primary-content a:active h6, .sidebar a:hover h1, .sidebar a:hover h2, .sidebar a:hover h3, .sidebar a:hover h4, .sidebar a:hover h5, .sidebar a:hover h6, .sidebar a:active h1, .sidebar a:active h2, .sidebar a:active h3, .sidebar a:active h4, .sidebar a:active h5, .sidebar a:active h6 {
+      color: blue; }
+
 .logo {
   position: fixed;
-  top: 5px;
-  max-width: calc(100% - 60px); }
+  top: 0px;
+  font-size: 1.85rem;
+  line-height: 1.2em; }
+  .logo:hover {
+    color: blue; }
 
-.navigation ul.menu-list {
+.menu-list {
   border-left: none;
   line-height: .15rem; }
-  .navigation ul.menu-list ul {
-    border-left: none;
-    margin-left: 2em; }
 
-.navigation ul.menu-list li {
+/* have to wrap like this for bulma specificity overrides*/
+.menu-list li ul.level-two {
+  border-left: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0; }
+
+/* have to wrap like this for bulma specificity overrides*/
+.navigation .menu-list li {
   font-size: 2.5rem;
   margin-top: 0;
   margin-bottom: 0;
   line-height: 1.2em; }
-  .navigation ul.menu-list li a {
+  .navigation .menu-list li a {
     padding: 0.2em 0em;
     color: black; }
-    .navigation ul.menu-list li a.is-active {
+    .navigation .menu-list li a.is-active {
       background-color: transparent;
       color: black;
       text-decoration: underline;
@@ -7057,7 +7081,8 @@ p {
 	-ms-text-underline-position: below;
 	text-underline-position: under; 
 	*/ }
-    .navigation ul.menu-list li a:hover {
+    .navigation .menu-list li a:hover {
+      color: black;
       background-color: transparent;
       text-decoration: underline;
       /*
@@ -7065,16 +7090,44 @@ p {
 	-ms-text-underline-position: below;
 	text-underline-position: under; 
 	*/ }
-    .navigation ul.menu-list li a:active {
+    .navigation .menu-list li a:active {
       text-decoration: none; }
 
+/* ----------------------------
+	 MOBILE
+---------------------------*/
 @media only screen and (max-width: 769px) {
-  /* heavily inspired by https://codepen.io/erikterwan/pen/EVzeRP 
-	   rewritten for SVG icons tho 
+  /*
+	--------------------
+	Logo 
+	---------------------
 	*/
+  .logo {
+    font-size: 1.3rem;
+    background-color: white;
+    width: 100%;
+    padding: 18px 60px 18px 5px; }
+  /*
+	--------------------
+	Menu Button
+	Checkbox CSS heavily inspired by https://codepen.io/erikterwan/pen/EVzeRP 
+	---------------------
+	*/
+  .menu_button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 900; }
+    .menu_button rect {
+      opacity: 1;
+      transition: opacity .1s ease-out, transform .3s ease-out, fill .3s ease-out; }
   /* invisible input item that is over the hamburger menu */
   .menu__check {
-    /*removing [type="checkbox"] to remove any specificity*/
+    /*removing [type="checkbox"] to remove any specificity preventing overrides*/
+    opacity: 0;
+    /* hide the navigation checkbox */
+    z-index: 1000;
+    /* and place it over the hamburger */
     position: fixed;
     top: 0;
     right: 0px;
@@ -7082,10 +7135,6 @@ p {
     width: 90px;
     height: 70px;
     cursor: pointer;
-    opacity: 0;
-    /* hide the navigation checkbox */
-    z-index: 1000;
-    /* and place it over the hamburger */
     -webkit-touch-callout: none;
     /* If the menu button input element is checked */ }
     .menu__check:checked ~ .menu {
@@ -7112,19 +7161,15 @@ p {
       .menu__check:checked ~ .menu_button rect:nth-child(3) {
         transform: rotate(-45deg) translate(-20px, -6px);
         /*fill: red;*/ }
-  .menu_button {
-    /*padding: 10px 10px;*/
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 900; }
-    .menu_button rect {
-      opacity: 1;
-      transition: opacity .1s ease-out, transform .3s ease-out, fill .3s ease-out; }
+  .level-two {
+    padding-left: 0;
+    margin-left: 0; }
+    .level-two li {
+      padding-left: 0;
+      margin-left: 0; }
   .menu {
     display: none;
     height: 0px;
-    width: calc(100% - 30px);
     opacity: 0;
     z-index: -5;
     transition: opacity .1s ease-in, height .2s ease-in;
@@ -7144,12 +7189,49 @@ p {
       background: blue;
       color: white; } }
 
+/* ----------------------------
+	 DESKTOP
+---------------------------*/
 @media only screen and (min-width: 770px) {
+  .logo {
+    margin-top: 1.5em; }
   input.menu__check, .menu__button {
-    display: none; } }
+    display: none; }
+  .navigation {
+    position: sticky;
+    top: 2em; } }
+
+@media only screen and (min-width: 769px) {
+  .primary-content {
+    margin-top: 4em; } }
+
+@media only screen and (max-width: 769px) {
+  .primary-content {
+    margin-left: 5px;
+    margin-right: 5px; } }
+
+.list__link:link, .list__link:visited {
+  text-decoration: none; }
+
+.list__link:hover, .list__link:active {
+  text-decoration: none; }
 
 .sidebar {
-  font-size: 1.3rem; }
+  font-size: 1.3rem;
+  position: sticky;
+  top: 0px; }
+
+@media only screen and (max-width: 769px) {
+  .sidebar {
+    border-top: 4px solid black;
+    margin-top: 2em;
+    margin-left: 5px;
+    margin-right: 5px; } }
+
+.names-list__name {
+  font-size: 2rem;
+  line-height: 1.3em;
+  margin-top: .5rem; }
 
 .name-detail__field {
   margin-top: 1.5em; }

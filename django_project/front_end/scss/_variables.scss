@@ -8,5 +8,20 @@ $font_primary_italic: "Utah Oblique", $system_ui_fonts;
 /* Colors */
 $black: rgb(0,0,0);
 $white: rgb(255, 255, 255);
+$blue: rgb(0,0,255);
 
 $color_primary: $black;
+$color_secondary: $blue;
+$color_background: $white;
+
+/* Layout */
+$page_top_margin: 2em;
+
+
+/* Mobile layout */
+$menu_button_width: 60px;
+$menu_button_click_width: 90px;
+$mobile_logo_margin: 18px;
+
+$mobile_page_margin: 5px;
+
