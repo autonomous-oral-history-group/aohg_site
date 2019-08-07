@@ -6991,7 +6991,7 @@ a:link, a:visited {
   color: black; }
 
 a:hover, a:active {
-  color: blue;
+  color: #2828ff;
   cursor: url("/static/assets/cursor.svg") 15 15, url("/static/assets/cursor.svg") 15 15, pointer; }
 
 h1 {
@@ -7020,6 +7020,10 @@ p {
   font-size: 1.05rem;
   margin-top: .2em; }
 
+*::selection {
+  color: #2828ff;
+  background-color: white; }
+
 .page {
   margin-top: 2em; }
 
@@ -7040,9 +7044,9 @@ p {
     .primary-content a:link h1, .primary-content a:link h2, .primary-content a:link h3, .primary-content a:link h4, .primary-content a:link h5, .primary-content a:link h6, .primary-content a:visited h1, .primary-content a:visited h2, .primary-content a:visited h3, .primary-content a:visited h4, .primary-content a:visited h5, .primary-content a:visited h6, .sidebar a:link h1, .sidebar a:link h2, .sidebar a:link h3, .sidebar a:link h4, .sidebar a:link h5, .sidebar a:link h6, .sidebar a:visited h1, .sidebar a:visited h2, .sidebar a:visited h3, .sidebar a:visited h4, .sidebar a:visited h5, .sidebar a:visited h6 {
       text-decoration: none; }
   .primary-content a:hover, .primary-content a:active, .sidebar a:hover, .sidebar a:active {
-    color: blue; }
+    color: #2828ff; }
     .primary-content a:hover h1, .primary-content a:hover h2, .primary-content a:hover h3, .primary-content a:hover h4, .primary-content a:hover h5, .primary-content a:hover h6, .primary-content a:active h1, .primary-content a:active h2, .primary-content a:active h3, .primary-content a:active h4, .primary-content a:active h5, .primary-content a:active h6, .sidebar a:hover h1, .sidebar a:hover h2, .sidebar a:hover h3, .sidebar a:hover h4, .sidebar a:hover h5, .sidebar a:hover h6, .sidebar a:active h1, .sidebar a:active h2, .sidebar a:active h3, .sidebar a:active h4, .sidebar a:active h5, .sidebar a:active h6 {
-      color: blue; }
+      color: #2828ff; }
 
 .logo {
   position: fixed;
@@ -7050,7 +7054,7 @@ p {
   font-size: 1.85rem;
   line-height: 1.2em; }
   .logo:hover {
-    color: blue; }
+    color: #2828ff; }
 
 .menu-list {
   border-left: none;
