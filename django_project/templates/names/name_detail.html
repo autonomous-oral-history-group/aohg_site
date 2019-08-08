@@ -92,10 +92,14 @@
 	<div class="name-detail__recording-list">
 	{% for recording in name.recordings %}
 		<div class="recording"> 
+			{{ recording.title }} 
 			{% if recording.audio_file %}
 				{{ recording.audio_file_player | safe }}
 			{% endif %}
-			{{ recording.title }} 
+
+			{% if recording.transcript_document %}
+					<a href="{{ recording.transcript_document.url }}" target="_blank">PDF</a>
+			{% endif %}
 		</div>
 	{% endfor %}
 	</div>

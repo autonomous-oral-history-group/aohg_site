@@ -8,6 +8,8 @@ from sidebars.models import Sidebar
 from django.db.models.functions import Lower
 
 
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Create your views here.
 
 class NamesList(ListView):
@@ -34,6 +36,7 @@ class NameDetail(DetailView):
 	def get_context_data(self, **kwargs):
 		context = super(NameDetail, self).get_context_data(**kwargs)
 		context['menu'] = 'names'
+		print(BASE_DIR)
 		return context
 
 
