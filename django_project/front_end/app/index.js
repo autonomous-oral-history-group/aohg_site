@@ -20,20 +20,41 @@ window.addEventListener('load', function(){
 	window.browse_menu_items = new Vue( {
 		el: '#browse-level-two',
 		data: {
-			isHidden: true,
-			menu_selected: window.menu_selected
+			notHidden: false,
+			menu_selected: window.menu_selected,
+			message: ''
 		},
 		methods: {
 			toggleVisibility : function(e) {
 				e.preventDefault();
-				if (this.isHidden == true) {
-					this.isHidden = false;
+				if (this.notHidden == true) {
+					this.notHidden = false;
 				}
 
 				else  {
-					this.isHidden = true;
+					this.notHidden = true;
 				}
+			},
+			checkIfNameOrSubject: function(){
+				if (window.menu_selected === 'names'){
+					return true;
+				}
+				else if(window.menu_selected === 'subjects'){
+					return true;
+				}
+				else{
+					return false;
+				}
+
 			}
+
+		},
+		mounted: function(){
+			this.$nextTick(function(){
+				if( this.checkIfNameOrSubject() ){
+					this.notHidden = true;
+				}
+			})
 
 		}
 

@@ -7225,6 +7225,12 @@ p {
   position: sticky;
   top: 0px; }
 
+.level-two {
+  display: none; }
+
+.level-two.not-hidden {
+  display: block; }
+
 @media only screen and (max-width: 769px) {
   .sidebar {
     border-top: 4px solid black;

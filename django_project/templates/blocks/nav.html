@@ -10,7 +10,7 @@
 	</svg>	
 	<ul class="menu-list menu">
 		<li id="browse-level-two"><a class="browse" v-on:click="toggleVisibility($event)">Browse</a>
-			<ul class="level-two" v-bind:class="{'is-hidden': isHidden}">
+			<ul class="level-two" v-bind:class="{'not-hidden': notHidden}">
 				<li>
 					<a href="{% url 'names_list'  %}" class="{% if menu_selected == 'names' %}is-active{% endif %}">Names</a>
 				</li>
