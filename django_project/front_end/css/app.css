@@ -7256,8 +7256,7 @@ p {
 
 .sidebar {
   font-size: 1.19rem;
-  position: sticky;
-  top: 2em; }
+  position: sticky; }
 
 .sidebar p {
   font-size: 1.19rem;
@@ -7275,9 +7274,17 @@ p {
 @media only screen and (max-width: 769px) {
   .sidebar {
     border-top: 4px solid black;
-    margin-top: 2em;
+    padding-top: 2em;
     margin-left: 5px;
     margin-right: 5px; } }
+
+/* ----------------------------
+	 TABLET
+---------------------------*/
+@media only screen and (min-width: 769px) {
+  .sidebar {
+    margin-top: 2em;
+    padding-top: 0; } }
 
 /* ----------------------------
 	 DESKTOP

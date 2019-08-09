@@ -1,7 +1,8 @@
+.sidebar__container{}
+
 .sidebar{
 	font-size: $small_font_size;
 	position: sticky;
-	top: $page_top_margin ;
 }
 
 .sidebar p{
@@ -26,9 +27,20 @@
 @media only screen and (max-width : $tablet){
 	.sidebar{
 		border-top: 4px solid black;
-		margin-top: $page_top_margin;
+		padding-top: $page_top_margin;
 		margin-left: $mobile_page_margin;
 		margin-right: $mobile_page_margin;
+	}
+
+}
+
+/* ----------------------------
+	 TABLET
+---------------------------*/
+@media only screen and (min-width : $tablet){
+	.sidebar{
+		margin-top: $page_top_margin;
+		padding-top: 0;
 	}
 
 }
