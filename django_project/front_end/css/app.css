@@ -7078,15 +7078,14 @@ p {
 .menu-list li ul.level-two {
   border-left: none;
   padding-left: 0;
-  margin-top: 0;
-  margin-bottom: 0; }
+  margin: 0 .6em; }
 
 /* have to wrap like this for bulma specificity overrides*/
 .navigation .menu-list li {
-  font-size: 3.4rem;
+  font-size: 2.975rem;
   margin-top: 0;
-  margin-bottom: 0;
-  line-height: 0.9em; }
+  margin-bottom: -0.1em;
+  line-height: 1.1em; }
   .navigation .menu-list li a {
     color: black; }
     .navigation .menu-list li a.is-active {
@@ -7187,10 +7186,9 @@ p {
       margin-left: 0;
       margin: .5em 0; }
       .level-two li a {
-        font-size: 2rem;
-        line-height: 2.5rem;
-        text-transform: uppercase;
-        letter-spacing: 0.03rem; }
+        font-size: 2.38rem;
+        line-height: 1.5em;
+        text-transform: uppercase; }
   .menu {
     display: none;
     height: 0px;
@@ -7230,19 +7228,6 @@ p {
   .navigation .menu-list li a {
     padding: 0.2em 0em; } }
 
-/* ----------------------------
-	 DESKTOP
----------------------------*/
-@media only screen and (min-width: 769px) {
-  .primary-content {
-    margin-top: 6em; } }
-
-@media only screen and (max-width: 769px) {
-  .primary-content {
-    margin-top: 2em;
-    margin-left: 5px;
-    margin-right: 5px; } }
-
 .list__link:link, .list__link:visited {
   text-decoration: none; }
 
@@ -7252,6 +7237,22 @@ p {
 .list__link-title {
   font-size: 1.7rem;
   line-height: 1.2em; }
+
+/* ----------------------------
+	 DESKTOP
+---------------------------*/
+@media only screen and (min-width: 769px) {
+  .primary-content {
+    margin-top: 6em; } }
+
+/* ----------------------------
+	 MOBILE
+---------------------------*/
+@media only screen and (max-width: 769px) {
+  .primary-content {
+    margin-top: 0;
+    margin-left: 5px;
+    margin-right: 5px; } }
 
 .sidebar {
   font-size: 1.19rem;
@@ -7268,12 +7269,22 @@ p {
 .level-two.not-hidden {
   display: block; }
 
+/* ----------------------------
+	 MOBILE
+---------------------------*/
 @media only screen and (max-width: 769px) {
   .sidebar {
     border-top: 4px solid black;
     margin-top: 2em;
     margin-left: 5px;
     margin-right: 5px; } }
+
+/* ----------------------------
+	 DESKTOP
+---------------------------*/
+@media only screen and (min-width: 1088px) {
+  .sidebar {
+    margin-left: 2em; } }
 
 .names-list {
   margin-top: 2em; }

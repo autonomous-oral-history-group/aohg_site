@@ -20,14 +20,14 @@
 </head>
 
 <body>
-	<div class="container page">
+	<div class="container is-fluid page">
 		 <div class="columns">
-			  <div class="column is-12-mobile is-3-desktop navigation__container">
+			  <div class="column is-12-mobile is-3-tablet is-3-desktop is-2-fullhd navigation__container">
 				{% block 'navigation' %}
 					{% include 'blocks/nav.html' with menu_selected=menu %}
 				{% endblock 'navigation' %}
 			 </div>
-			 <div class="column is-6 primary-content"> 
+			 <div class="column primary-content"> 
 				<header>
 				<a href="{% url 'index'  %}"><div class="logo aohg_logo">Autonomous Oral History Group</div></a>
 				</header>
@@ -38,10 +38,12 @@
 				 {% block 'middle_content' %}
 				 {% endblock 'middle_content' %}
 			 </div>
-			 <div class="column is-3 sidebar">
-				 {% block 'right_column' %}
-					 <p> </p>
-				 {% endblock 'right_column' %}
+			 <div class="column is-3-tablet is-3-desktop sidebar__container">
+				 <div class="sidebar">
+					 {% block 'right_column' %}
+						 <p> </p>
+					 {% endblock 'right_column' %}
+				 </div>
 			 </div>
 		</div> 
 </body>

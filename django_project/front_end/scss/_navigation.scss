@@ -21,8 +21,7 @@
 .menu-list li ul.level-two{
 	border-left: none; 
 	padding-left: 0;
-	margin-top: 0;
-	margin-bottom: 0;
+	margin: 0 .6em;
 }
 
 .level-two{
@@ -35,8 +34,8 @@
 	.menu-list li{
 		font-size: $large_font_size; 
 		margin-top: 0;
-		margin-bottom: 0;
-		line-height: 0.9em;
+		margin-bottom: -0.1em;
+		line-height: 1.1em;
 
 
 		a{
@@ -162,10 +161,10 @@
 			margin: .5em 0;
 
 			a{
-				font-size: 2rem;
-				line-height: 2.5rem;
+				font-size: $medium_font_size;
+				line-height: 1.5em;
 				text-transform: uppercase;
-				letter-spacing: 0.03rem;
+				//letter-spacing: 0.03rem;
 			}
 
 		}

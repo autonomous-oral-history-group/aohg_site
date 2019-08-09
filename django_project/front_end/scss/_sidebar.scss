@@ -19,12 +19,26 @@
 	display:block;
 }
 
+
+/* ----------------------------
+	 MOBILE
+---------------------------*/
 @media only screen and (max-width : $tablet){
 	.sidebar{
 		border-top: 4px solid black;
 		margin-top: $page_top_margin;
 		margin-left: $mobile_page_margin;
 		margin-right: $mobile_page_margin;
+	}
+
+}
+
+/* ----------------------------
+	 DESKTOP
+---------------------------*/
+@media only screen and (min-width : $desktop){
+	.sidebar{
+		margin-left: 2em;
 	}
 
 }
