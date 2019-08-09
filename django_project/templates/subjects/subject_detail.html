@@ -8,10 +8,10 @@
 {% endblock %}
 
 {% block 'middle_content' %}
-	<section class="subject-detail__names-list"> 
+	<section class="subject-detail__names-list list-page__list"> 
 		{% for name in names %} 
-			<a class="subject-detail__name" href="{% url 'name_detail' name.slug %}">
-				<h2 class="subtitle is-4">{{ name.name }}</h2> 
+			<a class="subject-detail__name list__link" href="{% url 'name_detail' name.slug %}">
+				<h2 class="list__link-title">{{ name.name }}</h2> 
 			</a> 
 		{% endfor %}
 	</section>

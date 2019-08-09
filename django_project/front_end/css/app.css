@@ -6994,9 +6994,16 @@ a:hover, a:active {
   color: #2828ff;
   cursor: url("/static/assets/cursor.svg") 15 15, url("/static/assets/cursor.svg") 15 15, pointer; }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.7rem; }
+
 h1 {
   font-weight: 400;
-  font-size: 1.8em;
   color: black; }
 
 h2 {
@@ -7017,7 +7024,7 @@ h5 {
 
 p {
   color: black;
-  font-size: 1.05rem;
+  font-size: 1.7rem;
   margin-top: .2em; }
 
 *::selection {
@@ -7048,10 +7055,17 @@ p {
     .primary-content a:hover h1, .primary-content a:hover h2, .primary-content a:hover h3, .primary-content a:hover h4, .primary-content a:hover h5, .primary-content a:hover h6, .primary-content a:active h1, .primary-content a:active h2, .primary-content a:active h3, .primary-content a:active h4, .primary-content a:active h5, .primary-content a:active h6, .sidebar a:hover h1, .sidebar a:hover h2, .sidebar a:hover h3, .sidebar a:hover h4, .sidebar a:hover h5, .sidebar a:hover h6, .sidebar a:active h1, .sidebar a:active h2, .sidebar a:active h3, .sidebar a:active h4, .sidebar a:active h5, .sidebar a:active h6 {
       color: #2828ff; }
 
+.back-arrow {
+  display: block;
+  margin-bottom: 2em; }
+
+.page-title {
+  font-size: 1.7rem; }
+
 .logo {
-  position: fixed;
+  position: relative;
   top: 0px;
-  font-size: 1.85rem;
+  font-size: 1.7rem;
   line-height: 1.2em; }
   .logo:hover {
     color: #2828ff; }
@@ -7069,12 +7083,11 @@ p {
 
 /* have to wrap like this for bulma specificity overrides*/
 .navigation .menu-list li {
-  font-size: 2.5rem;
+  font-size: 3.4rem;
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 1.2em; }
+  line-height: 0.9em; }
   .navigation .menu-list li a {
-    padding: 0.2em 0em;
     color: black; }
     .navigation .menu-list li a.is-active {
       background-color: transparent;
@@ -7107,10 +7120,11 @@ p {
 	---------------------
 	*/
   .logo {
-    font-size: 1.3rem;
+    font-size: 1.19rem;
     background-color: white;
     width: 100%;
-    padding: 18px 60px 18px 5px; }
+    padding: 18px 60px 18px 5px;
+    position: fixed; }
   /*
 	--------------------
 	Menu Button
@@ -7170,7 +7184,13 @@ p {
     margin-left: 0; }
     .level-two li {
       padding-left: 0;
-      margin-left: 0; }
+      margin-left: 0;
+      margin: .5em 0; }
+      .level-two li a {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03rem; }
   .menu {
     display: none;
     height: 0px;
@@ -7198,19 +7218,28 @@ p {
 ---------------------------*/
 @media only screen and (min-width: 770px) {
   .logo {
-    margin-top: 1.5em; }
+    margin-top: 2em;
+    position: absolute; }
   input.menu__check, .menu__button {
     display: none; }
+  .navigation__container {
+    top: 2em;
+    position: relative; }
   .navigation {
-    position: sticky;
-    top: 2em; } }
+    position: sticky; }
+  .navigation .menu-list li a {
+    padding: 0.2em 0em; } }
 
+/* ----------------------------
+	 DESKTOP
+---------------------------*/
 @media only screen and (min-width: 769px) {
   .primary-content {
-    margin-top: 4em; } }
+    margin-top: 6em; } }
 
 @media only screen and (max-width: 769px) {
   .primary-content {
+    margin-top: 2em;
     margin-left: 5px;
     margin-right: 5px; } }
 
@@ -7220,10 +7249,18 @@ p {
 .list__link:hover, .list__link:active {
   text-decoration: none; }
 
+.list__link-title {
+  font-size: 1.7rem;
+  line-height: 1.2em; }
+
 .sidebar {
-  font-size: 1.3rem;
+  font-size: 1.19rem;
   position: sticky;
-  top: 0px; }
+  top: 2em; }
+
+.sidebar p {
+  font-size: 1.19rem;
+  line-height: 1.2em; }
 
 .level-two {
   display: none; }
@@ -7238,10 +7275,14 @@ p {
     margin-left: 5px;
     margin-right: 5px; } }
 
-.names-list__name {
-  font-size: 2rem;
-  line-height: 1.3em;
-  margin-top: .5rem; }
+.names-list {
+  margin-top: 2em; }
+
+.name-detail h1, .name-detail h2, .name-detail h3, .name-detail h4, .name-detail h5, .name-detail h6 {
+  font-size: 1.19rem; }
+
+.name-detail p {
+  font-size: 1.19rem; }
 
 .name-detail__field {
   margin-top: 1.5em; }
@@ -7253,6 +7294,3 @@ p {
 
 .name-detail__subject {
   display: block; }
-
-.name-detail p {
-  font-size: 1.05rem; }

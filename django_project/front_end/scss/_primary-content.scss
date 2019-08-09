@@ -1,15 +1,19 @@
 .primary-content{
 }
 
+/* ----------------------------
+	 DESKTOP
+---------------------------*/
 @media only screen and (min-width: $tablet){
 	.primary-content{
-		margin-top: $page_top_margin * 2;
+		margin-top: $page_top_margin * 3;
 	}
 	
 }
 
 @media only screen and (max-width: $tablet){
 	.primary-content{
+		margin-top: $page_top_margin * 1;
 		margin-left: $mobile_page_margin;
 		margin-right: $mobile_page_margin;
 	}
@@ -27,6 +31,9 @@
 }
 
 .list__link-title{
+	font-size: $base_font_size;
+	line-height: 1.2em;
+	//margin-top: .5rem;
 }
 	
 

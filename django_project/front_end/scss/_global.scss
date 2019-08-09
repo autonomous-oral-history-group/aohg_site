@@ -24,9 +24,12 @@ a{
 	}
 }
 
-h1{ 
+h1, h2, h3, h4, h5, h6{
+	font-size: $base_font_size;
+}
+
+ h1{
 	font-weight: 400;
-	font-size: 1.8em;
 	color: $black;
 }
 
@@ -53,7 +56,7 @@ h5{
 
 p{ 
 	color: $black;
-	font-size: 1.05rem;
+	font-size: $base_font_size;
 	margin-top: .2em;
 }
 
@@ -107,3 +110,11 @@ p{
 }
 
 
+.back-arrow {
+	display: block;
+	margin-bottom: $page_top_margin;
+}
+
+.page-title{
+	font-size: $base_font_size;
+}

@@ -5,6 +5,12 @@ $font_primary: "Utah", $system_ui_fonts;
 $font_primary_bold: "Utah Bold", $system_ui_fonts;
 $font_primary_italic: "Utah Oblique", $system_ui_fonts;
 
+
+$base_font_size: 1.70rem;
+$small_font_size: $base_font_size * 0.7;
+$medium_font_size: $base_font_size * 1.5;
+$large_font_size: $base_font_size * 2;
+
 /* Colors */
 $black: rgb(0,0,0);
 $white: rgb(255, 255, 255);

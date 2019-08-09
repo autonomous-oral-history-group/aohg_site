@@ -1,13 +1,13 @@
 {% extends '../base.html' %}
 
 {% block 'title' %}Subjects{% endblock %}
-{% block 'page_title' %}Subjects{% endblock %}
+{% block 'page_title' %}Subject{% endblock %}
 
 {% block 'middle_content' %}
-	<section class="subjects-list__list"> 
+	<section class="subjects-list__list list-page__list"> 
 		{% for subject in subjects %}
-			<a class="subjects-list__subject"href="{% url 'subject_detail' subject.slug %}">
-				<h2 class="subtitle is-4">{{ subject.name }}</h2> 
+			<a class="subjects-list__subject list__link"href="{% url 'subject_detail' subject.slug %}">
+				<h2 class="list__link-title">{{ subject.name }}</h2> 
 			</a>
 		{% endfor %} 
 	</section> 

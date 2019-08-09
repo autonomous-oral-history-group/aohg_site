@@ -1,7 +1,12 @@
 .sidebar{
-	font-size: 1.3rem;
+	font-size: $small_font_size;
 	position: sticky;
-	top: 0px;
+	top: $page_top_margin ;
+}
+
+.sidebar p{
+	font-size: $small_font_size;
+	line-height: 1.2em;
 }
 
 .level-two{

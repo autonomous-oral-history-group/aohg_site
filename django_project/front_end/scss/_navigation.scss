@@ -1,7 +1,7 @@
 .logo{
-	position: fixed;
+	position: relative;
 	top: 0px;
-	font-size: 1.85rem;
+	font-size: $base_font_size;
 	line-height: 1.2em;
 
 	&:hover{
@@ -33,14 +33,13 @@
 /* have to wrap like this for bulma specificity overrides*/
 .navigation {
 	.menu-list li{
-		font-size: 2.5rem; 
+		font-size: $large_font_size; 
 		margin-top: 0;
 		margin-bottom: 0;
-		line-height: 1.2em;
+		line-height: 0.9em;
 
 
 		a{
-			padding: 0.2em 0em;
 			color: $color_primary;
 
 			&.is-active{
@@ -74,10 +73,11 @@
 	---------------------
 	*/
 	.logo{
-		font-size: 1.3rem;
+		font-size: $small_font_size;
 		background-color: $white;
 		width: 100%;
 		padding: $mobile_logo_margin $menu_button_width $mobile_logo_margin $mobile_page_margin;
+		position: fixed;
 	}
 
 	/*
@@ -159,10 +159,20 @@
 		li{
 			padding-left: 0;
 			margin-left: 0;
+			margin: .5em 0;
+
+			a{
+				font-size: 2rem;
+				line-height: 2.5rem;
+				text-transform: uppercase;
+				letter-spacing: 0.03rem;
+			}
 
 		}
 
 	}
+
+
 
 
 
@@ -204,15 +214,22 @@
 ---------------------------*/
 @media only screen and (min-width : $tablet + 1){
 	.logo{
-		margin-top: $page_top_margin - 0.5em;
+		margin-top: $page_top_margin;
+		position: absolute;
 	}
 	input.menu__check, .menu__button{
 		display: none;
 	}
 
+	.navigation__container{
+		top: $page_top_margin;
+		position: relative;
+	}
 	.navigation{
 		position: sticky;
-		top: $page_top_margin;
+	}
+	.navigation .menu-list li a{
+	    padding: 0.2em 0em;
 	}
 
 }

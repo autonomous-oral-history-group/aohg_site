@@ -1,12 +1,25 @@
+.names-list{
+	margin-top: $page_top_margin;
+}
 .names-list__name{
-	font-size: 2rem;
-	line-height: 1.3em;
-	margin-top: .5rem;
 }
 
 
 .browse__name{
 
+}
+
+
+
+.name-detail{
+	
+	h1, h2, h3, h4, h5, h6{
+		font-size: $small_font_size;
+	}
+
+	p{
+		font-size: $small_font_size;
+	}
 }
 
 
@@ -17,6 +30,7 @@
 		margin-top: 0; 
 	}
 }
+
 
 .name-detail__title{
 	text-transform: uppercase; 
@@ -34,9 +48,6 @@
 .name-detail__location-call{ 
 }
 
-.name-detail p{
-	font-size: 1.05rem;
-}
 
 .name-detail__subhead{ 
 	
