@@ -21,8 +21,7 @@ window.addEventListener('load', function(){
 		el: '#browse-level-two',
 		data: {
 			notHidden: false,
-			menu_selected: window.menu_selected,
-			message: ''
+			menu_selected: window.menu_selected
 		},
 		methods: {
 			toggleVisibility : function(e) {
