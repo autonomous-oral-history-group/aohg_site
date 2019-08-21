@@ -225,6 +225,7 @@
 		position: relative;
 	}
 	.navigation{
+		top: $page_top_margin;
 		position: sticky;
 	}
 	.navigation .menu-list li a{

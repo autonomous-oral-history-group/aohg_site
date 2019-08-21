@@ -7224,6 +7224,7 @@ p {
     top: 2em;
     position: relative; }
   .navigation {
+    top: 2em;
     position: sticky; }
   .navigation .menu-list li a {
     padding: 0.2em 0em; } }
@@ -7284,7 +7285,9 @@ p {
 @media only screen and (min-width: 769px) {
   .sidebar {
     margin-top: 2em;
-    padding-top: 0; } }
+    padding-top: 0;
+    position: sticky;
+    top: 2em; } }
 
 /* ----------------------------
 	 DESKTOP
