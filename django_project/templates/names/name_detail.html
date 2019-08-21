@@ -78,7 +78,7 @@
 			<h2 class="name-detail__title">Subjects</h2>
 			<div class="name-detail__field-body name-detail__subject-list"> 
 				{% for subject in name.subjects.all %}
-					<a class="name-detail__subject" href="{% url 'subject_detail' subject.slug %}">{{ subject.name}}.</a>
+					<a class="name-detail__subject" href="{% url 'subject_detail' subject.slug %}">{{ subject.name}}</a>
 				{% endfor %}
 			</div>
 		</div>
