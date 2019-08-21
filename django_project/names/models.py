@@ -16,7 +16,7 @@ class Name(models.Model):
 	archivist_summary = HTMLField(blank=True) 
 	access_conditions = models.CharField(max_length=160,blank=True)
 	created_published_by = models.CharField(max_length=160,blank=True, verbose_name = 'Created / Published By')
-	extent = HTMLField(blank=True) 
+	bio_hist_note = HTMLField("Bio./Hist. Note", blank=True) 
 	slug = models.SlugField( \
 		unique=True, \
 		blank=True, \

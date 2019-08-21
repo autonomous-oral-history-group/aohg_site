@@ -34,7 +34,7 @@ class NameAdmin(admin.ModelAdmin):
 		'archivist_summary', \
 		'access_conditions', \
 		'created_published_by', \
-		'extent', \
+		'bio_hist_note', \
 		'subjects'
 	]
 
