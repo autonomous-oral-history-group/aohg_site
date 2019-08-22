@@ -131,12 +131,29 @@
 
 
 {% block 'right_column' %}
+	<script type="text/javascript">
+		window.recordings = []
+	</script>
 	<div class="name-detail__recording-list">
 	{% for recording in name.recordings %}
+		<script type="text/javascript">
+			window.recordings.push(  {
+				"file":"{{ recording.file_url }}",
+				"extension":"{{ recording.extension }}",
+				"transcript_document":
+					"{% if recording.transcript_document %}{{ recording.transcript_document.url }}{% endif %}",
+				"transcript":
+					"{% if recording.transcript %}{{ recording.json_friendly_transcript | safe }}{% endif %}"
+			})
+		</script>
 		<div class="recording"> 
-			{{ recording.title }} 
 			{% if recording.audio_file %}
 				{{ recording.audio_file_player | safe }}
+				<div class="recording-list__recording-download"><a href="{{ recording.file_url }}">{{ recording.extension }}</a></div>
+			{% endif %}
+
+			{% if recording.transcript %}
+				{{ recording.transcript | safe}}
 			{% endif %}
 
 			{% if recording.transcript_document %}

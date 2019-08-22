@@ -13,7 +13,6 @@ import os.path
 
 # Add the audio field to your model
 class Recording(models.Model):
-	title = models.CharField(max_length=120, blank=True) 
 	transcript = HTMLField(blank=True)
 	transcript_document = models.FileField(upload_to='transcripts/', null=True, blank
 		=True)
@@ -26,13 +25,26 @@ class Recording(models.Model):
 		unique=True, \
 		blank=True, \
 		null=True,
-	) 
+	)
+
+	@property
+	def file_url(self) :
+		return settings.MEDIA_URL + str(self.audio_file.name)
+
+	@property
+	def extension(self):
+		return str(self.audio_file).split('.')[-1]
+
+	@property
+	def json_friendly_transcript(self):
+		return self.transcript.replace('"','\"').replace("\n",'\\n').replace("\r","\\n")
+
 
 	def audio_file_player(self):
 		 """audio player tag for admin"""
 		 if self.audio_file:
 			  file_url = settings.MEDIA_URL + str(self.audio_file)
-			  player_string = '<audio src="%s" controls>Your browser does not support the audio element.</audio>' % (file_url)
+			  player_string = '<audio src="%s" controls>Your browser does not support the audio element.</audio>' % (self.file_url)
 			  return player_string
 
 	audio_file_player.allow_tags = True
