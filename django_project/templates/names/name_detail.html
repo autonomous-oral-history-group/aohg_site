@@ -46,6 +46,17 @@
 			</div>
 		{% endif %}
 
+
+		{% if name.archivist_ethics %}
+			<div class="name-detail__field">
+				<h2 class="name-detail__title">Archivist Ethics</h2>
+				<div class="name-detail__field-body name-detail__archivist-ethics">
+					{{ name.archivist_ethics | safe }} 
+				</div>
+			</div>
+		{% endif %}
+
+
 		{% if name.created_published_by %}
 			<div class="name-detail__field">
 				<h2 class="name-detail__title">Created / Published</h2>
@@ -64,11 +75,11 @@
 			</div>
 		{% endif %}
 
-		{% if name.extent %}
+		{% if name.bio_hist_note %}
 		<div class="name-detail__field"> 
-			<h2 class="name-detail__title">Extent</h2>
-			<div class="name-detail__field-body name-detail__extent">
-				{{ name.extent | safe}}
+			<h2 class="name-detail__title">Bio./Hist. Note</h2>
+			<div class="name-detail__field-body name-detail__bio_hist_note">
+				{{ name.bio_hist_note | safe}}
 			</div>
 		</div>
 		{% endif %}

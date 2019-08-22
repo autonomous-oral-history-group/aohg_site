@@ -14,6 +14,7 @@ class Name(models.Model):
 	location = models.CharField(max_length=120, blank=True) 
 	summary = HTMLField(blank=True) 
 	archivist_summary = HTMLField(blank=True) 
+	archivist_ethics = HTMLField(blank=True) 
 	access_conditions = models.CharField(max_length=160,blank=True)
 	created_published_by = models.CharField(max_length=160,blank=True, verbose_name = 'Created / Published By')
 	bio_hist_note = HTMLField("Bio./Hist. Note", blank=True) 

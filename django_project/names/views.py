@@ -24,7 +24,7 @@ class NamesList(ListView):
 	def get_context_data(self, **kwargs):
 		context = super(NamesList, self).get_context_data(**kwargs) 
 		context['names'] = Name.objects.all().annotate(name_lower=Lower('name')).order_by('name_lower')
-		context['sidebar'] = self.get_sidebar_general_page()
+		context['sidebar'] = Sidebar.objects.get(title='General')
 		context['menu'] = 'names'
 		return context 
 
@@ -49,6 +49,7 @@ class SubjectList(ListView):
 	def get_context_data(self, **kwargs):
 		context = super(SubjectList, self).get_context_data(**kwargs)
 		context['subjects'] = Subject.objects.all().annotate(name_lower=Lower('name')).order_by('name_lower')
+		context['sidebar'] = Sidebar.objects.get(title='General')
 		context['menu'] = 'subjects'
 		return context
 
