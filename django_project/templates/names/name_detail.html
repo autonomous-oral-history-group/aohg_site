@@ -152,13 +152,14 @@
 				<div class="recording-list__recording-download"><a href="{{ recording.file_url }}">{{ recording.extension }}</a></div>
 			{% endif %}
 
+			{% if recording.transcript_document %}
+					<a href="{{ recording.transcript_document.url }}" target="_blank">PDF</a>
+			{% endif %}
+			
 			{% if recording.transcript %}
 				{{ recording.transcript | safe}}
 			{% endif %}
 
-			{% if recording.transcript_document %}
-					<a href="{{ recording.transcript_document.url }}" target="_blank">PDF</a>
-			{% endif %}
 		</div>
 	{% endfor %}
 	</div>
