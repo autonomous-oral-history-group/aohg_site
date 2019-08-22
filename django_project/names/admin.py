@@ -15,7 +15,7 @@ from . import models
 
 
 class RecordingInline(admin.StackedInline): 
-	prepopulated_fields = { 'slug': ('title',)}
+	#prepopulated_fields = { 'slug': ('title',)}
 	model = Recording
 	extra = 0
 
@@ -30,9 +30,9 @@ class NameAdmin(admin.ModelAdmin):
 		'slug', \
 		'call_number', \
 		'location', \
-		'summary', \
 		'date_published', \
 		'city_published', \
+		'summary', \
 		'archivist_summary', \
 		'archivist_ethics', \
 		'access_conditions', \
