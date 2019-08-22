@@ -33,7 +33,7 @@ class Recording(models.Model):
 
 	@property
 	def extension(self):
-		return str(self.audio_file).split('.')[-1]
+		return str(self.audio_file).split('.')[-1].upper()
 
 	@property
 	def json_friendly_transcript(self):
