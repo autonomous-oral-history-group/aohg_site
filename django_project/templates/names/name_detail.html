@@ -45,6 +45,15 @@
 			</div>
 		{% endif %}
 
+		{% if name.date_published %}
+			<div class="name-detail__field">
+			<h2 class="name-detail__title">Date Published</h2>
+			<div class="name-detail__field-body name-detail__date_published">
+				{{ name.date_published }} 
+			</div>
+			</div>
+		{% endif %}
+
 
 		{% if name.archivist_summary %}
 			<div class="name-detail__field">

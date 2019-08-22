@@ -31,6 +31,7 @@ class NameAdmin(admin.ModelAdmin):
 		'call_number', \
 		'location', \
 		'summary', \
+		'date_published', \
 		'archivist_summary', \
 		'archivist_ethics', \
 		'access_conditions', \

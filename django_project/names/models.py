@@ -5,6 +5,7 @@ from django.db import models
 from tinymce.models import HTMLField 
 from django.utils.text import slugify
 import tagulous.models
+from datetime import date 
 
 # Create your models here.
 
@@ -13,6 +14,7 @@ class Name(models.Model):
 	call_number = models.CharField(max_length=120, blank=True) 
 	location = models.CharField(max_length=120, blank=True) 
 	summary = HTMLField(blank=True) 
+	date_published = models.DateField(blank=True, default=date.today)
 	archivist_summary = HTMLField(blank=True) 
 	archivist_ethics = HTMLField(blank=True) 
 	access_conditions = models.CharField(max_length=160,blank=True)
