@@ -15,6 +15,7 @@ class Name(models.Model):
 	location = models.CharField(max_length=120, blank=True) 
 	summary = HTMLField(blank=True) 
 	date_published = models.DateField(blank=True, default=date.today)
+	city_published = models.CharField(blank=True, default='Los Angeles', verbose_name='City Published', max_length=80)
 	archivist_summary = HTMLField(blank=True) 
 	archivist_ethics = HTMLField(blank=True) 
 	access_conditions = models.CharField(max_length=160,blank=True)

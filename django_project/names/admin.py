@@ -32,6 +32,7 @@ class NameAdmin(admin.ModelAdmin):
 		'location', \
 		'summary', \
 		'date_published', \
+		'city_published', \
 		'archivist_summary', \
 		'archivist_ethics', \
 		'access_conditions', \

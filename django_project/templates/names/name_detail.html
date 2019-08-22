@@ -15,15 +15,15 @@
 				<div class="name-detail__field-body__body__body name-detail__location-call">
 					<span  class="name-detail__title--inline">Call Number:</span> {{ name.call_number }}
 				</div>
+				<div class="name-detail__field-body name-detail__location-call">
+					<span class="name-detail__title--inline">Location:</span>
+					 {{ name.location | safe }} 
+				</div>
 			</div>
 		{% endif %}
 
 		{% if name.location %}
 			<div class="name-detail__field">
-				<h2 class="name-detail__title">Location</h2>
-				<div class="name-detail__field-body name-detail__location-call">
-				 {{ name.location | safe }} 
-				</div>
 			</div>
 		{% endif %}
 
@@ -47,13 +47,22 @@
 
 		{% if name.date_published %}
 			<div class="name-detail__field">
-			<h2 class="name-detail__title">Date Published</h2>
-			<div class="name-detail__field-body name-detail__date_published">
-				{{ name.date_published }} 
-			</div>
+				<div class="name-detail__field-body name-detail__date_published">
+					<span  class="name-detail__title--inline">Date Produced / Published:</span>
+					{{ name.date_published }} 
+				</div>
+				
+				<div class="name-detail__field-body name-detail__city_published">
+					<span  class="name-detail__title--inline">City Produced / Published:</span>
+					{{ name.city_published }} 
+				</div>
 			</div>
 		{% endif %}
 
+		{% if name.city_published %}
+			<div class="name-detail__field">
+			</div>
+		{% endif %}
 
 		{% if name.archivist_summary %}
 			<div class="name-detail__field">
