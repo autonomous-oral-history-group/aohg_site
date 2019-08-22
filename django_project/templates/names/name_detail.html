@@ -10,20 +10,44 @@
 {% block 'middle_content' %} 
 	<section class="name-detail"> 
 
-		{% if name.call_number %}
+		{% if name.call_number or name.location %}
 			<div class="name-detail__field">
+				{% if name.call_number %}
 				<div class="name-detail__field-body__body__body name-detail__location-call">
 					<span  class="name-detail__title--inline">Call Number:</span> {{ name.call_number }}
 				</div>
+				{% endif %}
+
+				{% if name.location %}
 				<div class="name-detail__field-body name-detail__location-call">
 					<span class="name-detail__title--inline">Location:</span>
 					 {{ name.location | safe }} 
 				</div>
+				{% endif %}
+
 			</div>
 		{% endif %}
 
-		{% if name.location %}
 			<div class="name-detail__field">
+			</div>
+
+
+
+		{% if name.date_published or name.city_published %}
+			<div class="name-detail__field">
+				{% if name.date_published %}
+				<div class="name-detail__field-body name-detail__date_published">
+					<span  class="name-detail__title--inline">Date Produced / Published:</span>
+					{{ name.date_published }} 
+				</div>
+				{% endif %}
+
+				{% if name.city_published %}
+				<div class="name-detail__field-body name-detail__city_published">
+					<span  class="name-detail__title--inline">City Produced / Published:</span>
+					{{ name.city_published }} 
+				</div>
+				{% endif %}
 			</div>
 		{% endif %}
 
@@ -45,43 +69,12 @@
 			</div>
 		{% endif %}
 
-		{% if name.date_published %}
-			<div class="name-detail__field">
-				<div class="name-detail__field-body name-detail__date_published">
-					<span  class="name-detail__title--inline">Date Produced / Published:</span>
-					{{ name.date_published }} 
-				</div>
-				
-				<div class="name-detail__field-body name-detail__city_published">
-					<span  class="name-detail__title--inline">City Produced / Published:</span>
-					{{ name.city_published }} 
-				</div>
-			</div>
-		{% endif %}
-
 		{% if name.city_published %}
 			<div class="name-detail__field">
 			</div>
 		{% endif %}
 
-		{% if name.archivist_summary %}
-			<div class="name-detail__field">
-				<h2 class="name-detail__title">Archivist Summary</h2>
-				<div class="name-detail__field-body name-detail__summary name-detail__summary--archivist"> 
-					{{ name.archivist_summary | safe }} 
-				</div>
-			</div>
-		{% endif %}
 
-
-		{% if name.archivist_ethics %}
-			<div class="name-detail__field">
-				<h2 class="name-detail__title">Archivist Ethics</h2>
-				<div class="name-detail__field-body name-detail__archivist-ethics">
-					{{ name.archivist_ethics | safe }} 
-				</div>
-			</div>
-		{% endif %}
 
 
 		{% if name.created_published_by %}
@@ -98,6 +91,26 @@
 				<h2 class="name-detail__title">Access Condtions</h2>
 				<div class="name-detail__field-body name-detail__access-conditions">
 					{{ name.access_conditions }}
+				</div>
+			</div>
+		{% endif %}
+
+
+		{% if name.archivist_summary %}
+			<div class="name-detail__field">
+				<h2 class="name-detail__title">Archivist Summary</h2>
+				<div class="name-detail__field-body name-detail__summary name-detail__summary--archivist"> 
+					{{ name.archivist_summary | safe }} 
+				</div>
+			</div>
+		{% endif %}
+
+
+		{% if name.archivist_ethics %}
+			<div class="name-detail__field">
+				<h2 class="name-detail__title">Archivist Ethics</h2>
+				<div class="name-detail__field-body name-detail__archivist-ethics">
+					{{ name.archivist_ethics | safe }} 
 				</div>
 			</div>
 		{% endif %}
