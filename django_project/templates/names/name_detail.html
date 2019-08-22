@@ -27,6 +27,15 @@
 			</div>
 		{% endif %}
 
+		{% if name.bio_hist_note %}
+		<div class="name-detail__field"> 
+			<h2 class="name-detail__title">Bio./Hist. Note</h2>
+			<div class="name-detail__field-body name-detail__bio_hist_note">
+				{{ name.bio_hist_note | safe}}
+			</div>
+		</div>
+		{% endif %}
+
 		{% if name.summary %}
 			<div class="name-detail__field">
 			<h2 class="name-detail__title">Summary</h2>
@@ -73,15 +82,6 @@
 					{{ name.access_conditions }}
 				</div>
 			</div>
-		{% endif %}
-
-		{% if name.bio_hist_note %}
-		<div class="name-detail__field"> 
-			<h2 class="name-detail__title">Bio./Hist. Note</h2>
-			<div class="name-detail__field-body name-detail__bio_hist_note">
-				{{ name.bio_hist_note | safe}}
-			</div>
-		</div>
 		{% endif %}
 
 		{% if name.subjects %}
