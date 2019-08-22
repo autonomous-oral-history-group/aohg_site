@@ -47,3 +47,4 @@ class NameAdmin(admin.ModelAdmin):
 	]
 
 admin.site.register(Name, NameAdmin)
+tagulous.admin.register(models.Subject)
