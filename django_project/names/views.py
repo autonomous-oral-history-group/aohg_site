@@ -17,6 +17,7 @@ class NamesList(ListView):
 	template_name = 'names/name_list.html'
 	context_object_name = 'names'
 	paginate_by = 200
+	ordering = ['name']
 
 	def get_sidebar_general_page(self):
 		return Sidebar.objects.get(title='General')
