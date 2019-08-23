@@ -1,0 +1,51 @@
+
+<h2>ITEM REQUEST</h2> 
+
+<p>Please submit the form below to request an appointment to conduct research with the collections. A AOHG member will contact you to confirm your appointment and answer any further questions as quickly as possible. </p>
+
+<h2>CITATION USE </h2>
+<p>Please email AOHG asking for permission to cite from the transcriptions.</p>
+
+<h2>Submission Form</h2>
+<form action="/request-form" method="POST">{% csrf_token %}
+
+	<label>Name</label>
+	<div class="">
+		<input type="text" name="name"><br>
+	</div>
+
+	<label>Email</label>
+	<div class="">
+		<input type="email" name="email"><br>
+	</div>
+
+
+	<label>Preferred Gender Pronouns</label>
+	<div class="">
+		<input type="text" name="email" placeholder="e.g. they/them or she/her"><br>
+	</div>
+
+	<label>Items You Are Interested in Viewing: <a target="_blank" href="/name">Search Here</a></label>
+	<div class="">
+	<input type="text" name="view_items"><br>
+	</div>
+
+
+	<h3>First and Second Choice Date and Time</h3>
+
+	<label>First Choice</label>
+	<div class="">
+		<input type="date" name="date1"><br>
+		<input type="time" name="time1"><br>
+	</div>
+
+	<label>Second Choice</label>
+	<div class="">
+		<input type="date" name="date2"><br>
+		<input type="time" name="time2"><br>
+	</div>
+
+	<div class="">
+		<input type="submit" value="Submit" />
+	</div>
+</form>
