@@ -23,10 +23,9 @@ SECRET_KEY = get_env_variable('DJANGO_SECRET_KEY')
 DEBUG = True
 
 # Discover our IP address
-#ALLOWED_HOSTS += ['aohistorygroup.com']
 #ALLOWED_HOSTS = ['aohistorygroup.com', 'www.aohistorygroup.com',  'aohistorygroup.com', '134.209.59.89', '127.0.0.1']
-#ALLOWED_HOSTS += ip_addresses()
-ALLOWED_HOSTS = ip_addresses()
+ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS += ip_addresses()
 
 
 # Database
