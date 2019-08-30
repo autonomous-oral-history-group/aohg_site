@@ -1,0 +1,44 @@
+
+<h2>Submission Form</h2>
+<form action="/request-form-enter" method="POST">{% csrf_token %}
+
+	<label>Full Name</label>
+	<div class="request-form__field">
+		<input type="text" placeholder="Jane Doe" name="name">
+	</div>
+
+	<label>Preferred Gender Pronouns</label>
+	<div class="request-form__field">
+		<input type="text" name="email" placeholder="e.g. they/them or she/her"><br>
+	</div>
+
+	<label>Email</label>
+	<div class="request-form__field request-form__email">
+		<input type="email" placeholder="jane@example.com" name="email"><br>
+	</div>
+
+
+
+	<label>Items You Are Interested in Viewing: <a target="_blank" href="/name">Search Here</a></label>
+	<div class="request-form__field request-form__view-items">
+	<input type="text" name="view_items"><br>
+	</div>
+
+	<h3>First and Second Choice Date and Time</h3>
+
+	<label>First Choice</label>
+	<div class="request-form__field">
+		<input type="date" name="date1"><br>
+		<input type="time" name="time1"><br>
+	</div>
+
+	<label>Second Choice</label>
+	<div class="request-form__field">
+		<input type="date" name="date2"><br>
+		<input type="time" name="time2"><br>
+	</div>
+
+	<div class="request-form__field">
+		<input type="submit" value="Submit" />
+	</div>
+</form>

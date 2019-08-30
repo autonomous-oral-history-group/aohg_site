@@ -9,6 +9,9 @@
 {% block 'middle_content' %}
 	<section class="page"> 
 			{{ page.content | safe }}
+			{% if menu == 'request' %}
+				{% include 'blocks/request-form.html' %}
+			{% endif %}
 
 	</section> 
 {% endblock %}
