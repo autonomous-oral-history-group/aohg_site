@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, TemplateView
 from .models import Page
+from .forms import RequestForm
+from django.views.generic.edit import FormView
 
 
 # Create your views here.
@@ -37,8 +39,6 @@ class Index(TemplateView):
 		return context
 
 
-from .forms import RequestForm
-from django.views.generic.edit import FormView
 
 class RequestView(FormView):
     template_name = 'contact.html'
