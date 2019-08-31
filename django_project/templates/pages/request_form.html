@@ -1,0 +1,11 @@
+{% extends 'pages/page_detail.html' %}
+
+
+
+{% block 'middle_content' %}
+	<section class="page"> 
+			{{ page.content | safe }}
+			{% include 'blocks/request-form.html' with form=form %}
+	</section> 
+{% endblock %}
+

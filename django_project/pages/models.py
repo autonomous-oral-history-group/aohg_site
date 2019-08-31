@@ -19,7 +19,23 @@ class Page(models.Model):
 
 	def __str__(self):
 		return self.title
-	
+
 	def __repr__(self):
 		return self.title
 
+class Request(models.Model):
+	created_at = models.DateTimeField(auto_now_add=True)
+	full_name = models.CharField(\
+		max_length=200, \
+		blank = True, \
+	)
+	pronouns = models.CharField( \
+		max_length=100, \
+		blank=True, \
+	)
+	email = models.EmailField()
+	items = models.ManyToManyField('names.Name')
+	first_choice_date = models.DateField()
+	first_choice_time = models.CharField( max_length=50, blank=True)
+	second_choice_date = models.DateField()
+	second_choice_time = models.CharField( max_length=50, blank=True)
