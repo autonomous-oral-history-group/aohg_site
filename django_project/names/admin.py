@@ -43,6 +43,12 @@ class NameAdmin(admin.ModelAdmin):
 
 	list_display = [ \
 		'name',  \
+		'slug',  \
+		'call_number',  \
+		'location',  \
+		'date_published',  \
+		'city_published',  \
+		'num_recordings',  \
 	]
 
 	inlines = [ 

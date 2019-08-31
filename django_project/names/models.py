@@ -34,6 +34,10 @@ class Name(models.Model):
 	def recordings(self):
 		return self.recording_set.all()
 
+	@property
+	def num_recordings(self):
+			return self.recording_set.count()
+
 	def save(self, *args, **kwargs):
 		# If there isn't a slug, make it
 		if (self.slug is None):
