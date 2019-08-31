@@ -94,7 +94,7 @@ TINYMCE_DEFAULT_CONFIG = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Los_Angeles'
 
 USE_I18N = True
 
@@ -147,3 +147,4 @@ FREQ_TYPE_VALUE = 8000
 
 # 0-Keep original, 1-Convert to MP3, 2-Convert to WAV, 3-Convert to OGG
 CONVERT_TYPE_VALUE = 0
+
