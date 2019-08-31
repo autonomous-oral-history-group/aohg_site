@@ -49,4 +49,3 @@ class Recording(models.Model):
 
 	audio_file_player.allow_tags = True
 	audio_file_player.short_description = ('Audio file player')
-
