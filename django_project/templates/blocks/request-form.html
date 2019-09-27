@@ -1,83 +1,85 @@
-<h2>Submission Form</h2>
-<form action="{% url 'request-form' %}" method="POST">{% csrf_token %}
+<div class="request-form" >
+	<h2>Submission Form</h2>
+	<form action="{% url 'request-form' %}" method="POST">{% csrf_token %}
 
-	<label>Full Name</label>
-	<div class="request-form__field">
-		<input type="text" placeholder="Jane Doe" name="full_name" required autocomplete="name" for="{{ form.full_name.id_for_label}}" >
-		{{ form.name.errors }}
-	</div>
-
-
-	<label>Email</label>
-	<div class="request-form__field request-form__email">
-		<input type="email" placeholder="jane@example.com" name="email" required autocomplete="email" for="{{ form.email.id_for_label }}"><br>
-		{{ form.email.errors }}
-	</div>
-
-	<label>Preferred Gender Pronouns</label>
-	<div class="request-form__field">
-		{{ form.pronouns }}
-	</div>
-
-	<label>Items You Are Interested in Viewing</label>
-	<div class="request-form__field request-form__view-items">
-		{{ form.items }}
-		{{ form.items.errors }}
-	<br>
-	</div>
+		<div class="request-form__field">
+			<label>Full Name <span class="form--required">*</span></label>
+			<input type="text" placeholder="Jane Doe" name="full_name" required autocomplete="name" for="{{ form.full_name.id_for_label}}" >
+			{{ form.name.errors }}
+		</div>
 
 
-	<h3>First and Second Choice Date and Time</h3>
+		<div class="request-form__field request-form__email">
+			<label>Email <span class="form--required">*</span></label>
+			<input type="email" placeholder="jane@example.com" name="email" required autocomplete="email" for="{{ form.email.id_for_label }}"><br>
+			{{ form.email.errors }}
+		</div>
 
-	<h4>First Choice</h4>
-	<div class="request-form__field">
-		<table>
-			<tr>
-				<th>
-					<label>Date</label>
-				</th>
-				<th>
-					<label>Time</label>
-				</th>
-			</tr>
-			<tr>
-				<td>
-					{{ form.first_choice_date }}
-					{{ form.first_choice_date.errors }}
-				</td>
-				<td>
-					{{ form.first_choice_time }}
-					{{ form.first_choice_time.errors }}
-				</td>
-			</tr>
-		</table>
-	</div>
+		<div class="request-form__field">
+			<label>Preferred Gender Pronouns <span class="form--optional">(optional)</span></label>
+			{{ form.pronouns }}
+		</div>
 
-	<h4>Second Choice</h4>
-	<div class="request-form__field">
-		<table>
-			<tr>
-				<th>
-					<label>Date</label>
-				</th>
-				<th>
-					<label>Time</label>
-				</th>
-			</tr>
-			<tr>
-				<td>
-					{{ form.second_choice_date }}
-					{{ form.second_choice_date.errors }}
-				</td>
-				<td>
-					{{ form.second_choice_time }}
-					{{ form.second_choice_time.errors }}
-				</td>
-			</tr>
-		</table>
-	</div>
+		<div class="request-form__field request-form__view-items">
+			<label>Items You Are Interested in Viewing <span class="form--required">*</span></label>
+			{{ form.items }}
+			{{ form.items.errors }}
+		<br>
+		</div>
 
-	<div class="request-form__field">
-		<input type="submit" value="Submit" />
-	</div>
-</form>
+
+		<h3>First and Second Choice Date and Time</h3>
+
+		<h4>First Choice</h4>
+		<div class="request-form__field">
+			<table>
+				<tr>
+					<th>
+						<label>Date</label>
+					</th>
+					<th>
+						<label>Time</label>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						{{ form.first_choice_date }}
+						{{ form.first_choice_date.errors }}
+					</td>
+					<td>
+						{{ form.first_choice_time }}
+						{{ form.first_choice_time.errors }}
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<h4>Second Choice</h4>
+		<div class="request-form__field">
+			<table>
+				<tr>
+					<th>
+						<label>Date</label>
+					</th>
+					<th>
+						<label>Time</label>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						{{ form.second_choice_date }}
+						{{ form.second_choice_date.errors }}
+					</td>
+					<td>
+						{{ form.second_choice_time }}
+						{{ form.second_choice_time.errors }}
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="request-form__field request-form__field--submit">
+			<input type="submit" value="Submit" />
+		</div>
+	</form>
+</div>

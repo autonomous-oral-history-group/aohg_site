@@ -3,8 +3,8 @@
 
 
 {% block 'middle_content' %}
-	<section class="page"> 
-			{{ page.content | safe }}
+	<section class="page request"> 
+			{{ page.content | safe }} 
 			{% include 'blocks/request-form.html' with form=form %}
 	</section> 
 {% endblock %}

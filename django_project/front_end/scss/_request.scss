@@ -1,0 +1,76 @@
+.request{
+	h2{
+		font-size: $small_font_size; 
+		text-transform: uppercase;
+	}
+	p{
+		font-size: $small_font_size; 
+		margin-bottom: 1em;
+	}
+}
+
+.request-form{
+	margin-top: 2em;
+	h2 {
+		font-size: $small_font_size; 
+	}
+
+}
+
+.request-form__field{
+	margin-top: 1em;
+
+	label{
+		font-size: $medium_font_size; 
+		font-size: $small_font_size; 
+		display: block;
+		font-family: $font_primary;
+		font-weight: 4000;
+	} 
+
+	input, select{
+		font-size: $medium_font_size; 
+		font-family: $font_primary;
+		font-weight: 4000;
+
+		&::placeholder{ 
+			color: $light_grey;
+		}
+	}
+
+	option{
+		&:checked{
+			background-color: $blue; 
+			color: $white;
+			font-family: $font_primary;
+		}
+	
+	}
+}
+
+.request-form__field--submit{
+	text-align: center;
+}
+
+input[type="submit"]{ 
+	font-size: $large_font_size;
+	background-color: $black;
+	color: $white;
+	padding: .5rem;
+	min-width: 270px;
+
+	&:hover, active{
+		background-color: $blue;
+		text-align: center;
+		cursor: pointer;
+	}
+}
+
+.form--required{
+	color: #ff0000; 
+}
+
+.form--optional{
+	color: $light_grey; 
+}
+
