@@ -64,6 +64,10 @@ Environment=AWS_STORAGE_BUCKET_NAME=XXX
 Environment=AWS_S3_REGION_NAME=sfo2
 Environment=AWS_S3_ENDPOINT_URL=https://sfo2.digitaloceanspaces.com
 Environment=AWS_S3_CUSTOM_DOMAIN=XXX.sfo2.digitaloceanspaces.com
+Environment=EMAIL_USER=postmaster@mg.xx.com
+Environment=EMAIL_PASS='PASSWORDGOESHERE123!'
+Environment=EMAIL_SMTP=smtp.mailgun.org
+Environment=EMAIL_TO=xx@xx.com
 ```
 
 These should be set in `/etc/systemd/system/gunicorn.service`.
