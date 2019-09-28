@@ -148,3 +148,10 @@ FREQ_TYPE_VALUE = 8000
 # 0-Keep original, 1-Convert to MP3, 2-Convert to WAV, 3-Convert to OGG
 CONVERT_TYPE_VALUE = 0
 
+# https://simpleisbetterthancomplex.com/tutorial/2017/05/27/how-to-configure-mailgun-to-send-emails-in-a-django-app.html
+EMAIL_HOST = get_env_variable('EMAIL_SMTP')
+EMAIL_PORT = 587
+EMAIL_HOST_USER = get_env_variable('EMAIL_USER')
+EMAIL_HOST_PASSWORD = get_env_variable('EMAIL_PASS')
+EMAIL_USE_TLS = True 
+
