@@ -7323,7 +7323,7 @@ p {
 
 .request-form {
   margin-top: 2em; }
-  .request-form h2 {
+  .request-form h2, .request-form h3, .request-form h4 {
     font-size: 1.19rem; }
 
 .request-form__field {
@@ -7335,15 +7335,58 @@ p {
     font-family: "Utah", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-weight: 4000; }
   .request-form__field input, .request-form__field select {
+    border: 2px solid black;
     font-size: 2.38rem;
     font-family: "Utah", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    font-weight: 4000; }
+    font-weight: 400; }
     .request-form__field input::placeholder, .request-form__field select::placeholder {
       color: #c8c8c8; }
+    .request-form__field input:focus, .request-form__field select:focus {
+      border: 2px solid #2828ff;
+      color: #2828ff; }
+    .request-form__field input::selection, .request-form__field select::selection {
+      background-color: #2828ff;
+      color: white; }
+    .request-form__field input::-webkit-scrollbar, .request-form__field select::-webkit-scrollbar {
+      width: 40px; }
+    .request-form__field input::-webkit-scrollbar-track, .request-form__field select::-webkit-scrollbar-track {
+      background-color: #c8c8c8;
+      border-color: black; }
+    .request-form__field input::-webkit-scrollbar-thumb, .request-form__field select::-webkit-scrollbar-thumb {
+      background-color: black; }
   .request-form__field option:checked {
     background-color: #2828ff;
     color: white;
     font-family: "Utah", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+
+.request-form__field--dt {
+  margin-top: 0px; }
+  .request-form__field--dt input {
+    max-width: 180px;
+    margin-left: 20px; }
+  .request-form__field--dt th {
+    padding-left: 20px; }
+  .request-form__field--dt th:first-child {
+    padding-left: 0px; }
+  .request-form__field--dt td:first-child input {
+    margin-left: 0px; }
+
+.request_form__first-second__header {
+  margin-top: 2em;
+  font-size: 2.38rem; }
+
+.request_form__first-second__subheader {
+  font-size: 0.85rem;
+  font-family: "Utah Bold", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  letter-spacing: .01em;
+  margin-top: .5em;
+  text-transform: uppercase; }
+
+.request_form__first-second__dt {
+  font-size: 1.19rem;
+  text-transform: uppercase;
+  font-family: "Utah", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 400; }
 
 .request-form__field--submit {
   text-align: center; }

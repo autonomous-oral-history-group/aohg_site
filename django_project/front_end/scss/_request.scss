@@ -11,7 +11,7 @@
 
 .request-form{
 	margin-top: 2em;
-	h2 {
+	h2, h3, h4 {
 		font-size: $small_font_size; 
 	}
 
@@ -29,13 +29,36 @@
 	} 
 
 	input, select{
+		border: 2px solid $black;
 		font-size: $medium_font_size; 
 		font-family: $font_primary;
-		font-weight: 4000;
+		font-weight: 400;
 
 		&::placeholder{ 
 			color: $light_grey;
 		}
+		&:focus{ 
+			border: 2px solid $blue; 
+			color: $blue;
+		}
+		&::selection{
+			background-color: $blue;
+			color: $white;
+		}
+
+		&::-webkit-scrollbar{
+			width: 40px; 
+		}
+
+		&::-webkit-scrollbar-track{
+			background-color: $light_grey; 
+			border-color: $black
+		}
+
+		&::-webkit-scrollbar-thumb{
+			background-color: $black; 
+		}
+
 	}
 
 	option{
@@ -46,6 +69,50 @@
 		}
 	
 	}
+}
+
+.request-form__field--dt{
+	margin-top: 0px; 
+	input{
+		max-width: 180px;
+		margin-left: 20px;
+	}
+
+	// equal padding for header and input
+	th{
+		padding-left: 20px
+	}
+
+	th:first-child{
+		// match first header and first input
+		padding-left: 0px
+	}
+
+	td:first-child input{
+		// no padding on the first input
+		margin-left: 0px;
+	}
+}
+
+.request_form__first-second__header{
+	margin-top: 2em;
+	font-size: $medium_font_size;
+}
+
+.request_form__first-second__subheader{
+	//font-size: $small_font_size;
+	font-size: $xs_font_size;
+	font-family: $font_primary_bold;
+	letter-spacing: .01em;
+	margin-top: .5em;
+	text-transform: uppercase;
+}
+
+.request_form__first-second__dt{
+	font-size: $small_font_size;
+	text-transform: uppercase;
+	font-family: $font_primary;
+	font-weight: 400;
 }
 
 .request-form__field--submit{
