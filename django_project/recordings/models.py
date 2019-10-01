@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import simplejson
+
 from django.db import models
 from names.models import Name
 
@@ -37,7 +39,7 @@ class Recording(models.Model):
 
 	@property
 	def json_friendly_transcript(self):
-		return self.transcript.replace('"','\"').replace("\n",'\\n').replace("\r","\\n")
+		return simplejson.JSONEncoderForHTML().encode(self.transcript)
 
 
 	def audio_file_player(self):
