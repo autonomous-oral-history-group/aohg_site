@@ -143,7 +143,7 @@
 				"transcript_document":
 					"{% if recording.transcript_document %}{{ recording.transcript_document.url }}{% endif %}",
 				"transcript":
-					"{% if recording.transcript %}{{ recording.json_friendly_transcript | safe }}{% endif %}"
+					{% if recording.transcript %}{{ recording.json_friendly_transcript | safe }}{% endif %}
 			})
 		</script>
 		<div class="recording"> 
