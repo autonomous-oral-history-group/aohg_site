@@ -6992,7 +6992,7 @@ a:link, a:visited {
 
 a:hover, a:active {
   color: #2828ff;
-  cursor: url("/static/assets/cursor.svg") 15 15, url("/static/assets/cursor.svg") 15 15, pointer; }
+  cursor: url("/static/assets/pointer-50.png") 12 1, pointer; }
 
 h1,
 h2,
