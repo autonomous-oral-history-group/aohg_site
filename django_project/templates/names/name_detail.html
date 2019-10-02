@@ -8,7 +8,21 @@
 {% endblock %}
 
 {% block 'middle_content' %} 
+<script type="text/javascript"> 
+	window.nameDetails = {}
+
+	window.nameDetails['name'] = "{{ name.name }}";
+	window.nameDetails['call_number'] = "{{ name.call_number }}";
+	window.nameDetails['date_published'] = "{{ name.city_published }}";
+	window.nameDetails['city_published'] = "{{ name.city_published }}";
+	window.nameDetails['bio_hist_note'] = "{{ name.bio_hist_note }}";
+</script>
 	<section class="name-detail"> 
+
+		{% if name.recordings %}
+			<div id="transcript_text" class="name-detail__transcript-text" style="display:none;">
+			</div>
+		{% endif %}
 
 		{% if name.call_number or name.location %}
 			<div class="name-detail__field">
@@ -134,8 +148,8 @@
 	<script type="text/javascript">
 		window.recordings = []
 	</script>
-	<div class="name-detail__recording-list">
-	{% for recording in name.recordings %}
+	<div class="name-detail__recording-list"> 
+	{% for recording in name.recordings %} 
 		<script type="text/javascript">
 			window.recordings.push(  {
 				"file":"{{ recording.file_url }}",
@@ -146,21 +160,17 @@
 					{% if recording.transcript %}{{ recording.json_friendly_transcript | safe }}{% endif %}
 			})
 		</script>
+		{% endfor %}
+	{% for recording in name.recordings %} 
 		<div class="recording"> 
-			{% if recording.audio_file %}
-				{{ recording.audio_file_player | safe }}
-				<div class="recording-list__recording-download"><a href="{{ recording.file_url }}">{{ recording.extension }}</a></div>
-			{% endif %}
-
 			{% if recording.transcript_document %}
-					<a href="{{ recording.transcript_document.url }}" target="_blank">PDF</a>
-			{% endif %}
-			
-			{% if recording.transcript %}
-				{{ recording.transcript | safe}}
-			{% endif %}
-
+				<a href="{{ recording.transcript_document.url }}" target="_blank">PDF</a>
+			{% endif %} 
 		</div>
 	{% endfor %}
+
+	<div id="recording-list"> 
+	</div>
+
 	</div>
 {% endblock %}

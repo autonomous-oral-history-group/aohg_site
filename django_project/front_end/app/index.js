@@ -5,19 +5,45 @@
 // https://github.com/nuxt/nuxt.js/issues/1142
 //window.Vue = require('vue/dist/vue.common');
 //var Vue = require('vue/dist/vue.common');
-window.Vue = require('vue/dist/vue.common');
 
-var test = require('./test')
+var Vue = require('vue/dist/vue.common');
 
 //window.onload = function(){
-window.addEventListener('load', function(){
 
-	//jQuery('.level-two').removeClass('is-hidden');
+Vue.component('recording', {
+		props: ['transcript', 'transcript_document', 'file', 'extension'],
+		data: {  },
+		template: 
+			'<div class="recording_details">' +
+			'<audio v-if="file" :src="file" controls="">Your browser does not support the audio element.</audio> ' +
+			'<div v-if="file" class="recording-list__recording-download"><a :href="file">{{ extension }}</a></div> ' + 
+			'<a v-if="transcript_document" :href="transcript_document" target="_blank">PDF</a>' +
+			'<a v-if="transcript" href="#">Transcript</a> ' +
+			'</div>' 
+});
 
-	console.log('test');
-	console.log(test);
+// On document load
+window.addEventListener('load', function(){ 
+	var recording_list = new Vue( 
+		{
+		el : '#recording-list',
+		data: {
+			recordings: window.recordings
+		},
+		template: '<div class="recordings">' +
+		'<recording v-for="r in recordings" ' + 
+			'v-bind:transcript="r.transcript" ' + 
+			'v-bind:transcript_document =  "r.transcript_document" ' +
+			'v-bind:file = "r.file" ' +
+			'v-bind:extension = "r.extension" ' +
+		'> </recording>' +
+		'</div>'
+		} 
+	);
 
-	window.browse_menu_items = new Vue( {
+
+
+	var browse_menu_items = new Vue( {
 		el: '#browse-level-two',
 		data: {
 			notHidden: false,
@@ -57,6 +83,10 @@ window.addEventListener('load', function(){
 
 		}
 
+	});
+
+	window.transcript_text = new Vue({
+		el: '#transcript_text',
 	});
 
 });
