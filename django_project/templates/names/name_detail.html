@@ -161,13 +161,6 @@
 			})
 		</script>
 		{% endfor %}
-	{% for recording in name.recordings %} 
-		<div class="recording"> 
-			{% if recording.transcript_document %}
-				<a href="{{ recording.transcript_document.url }}" target="_blank">PDF</a>
-			{% endif %} 
-		</div>
-	{% endfor %}
 
 	<div id="recording-list"> 
 	</div>
