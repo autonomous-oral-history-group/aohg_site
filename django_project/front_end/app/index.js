@@ -6,19 +6,21 @@
 //window.Vue = require('vue/dist/vue.common');
 //var Vue = require('vue/dist/vue.common');
 
-var Vue = require('vue/dist/vue.common');
-
-//window.onload = function(){
+var Vue = require('vue/dist/vue.common'); 
+window.current_transcript = {
+	"text": ""
+}
 
 Vue.component('recording', {
 		props: ['transcript', 'transcript_document', 'file', 'extension'],
-		data: {  },
+		//data: function() {  },
 		methods: {
 			show_transcript: function(event) { 
 				event.preventDefault();
 				console.log('test the transcript'); 
-			}
-			
+				console.log(this.transcript); 
+				window.current_transcript.text = this.transcript;
+			} 
 		},
 		template: 
 			'<div class="recording_details">' +
@@ -31,25 +33,8 @@ Vue.component('recording', {
 
 // On document load
 window.addEventListener('load', function(){ 
-	var recording_list = new Vue( 
-		{
-		el : '#recording-list',
-		data: {
-			recordings: window.recordings
-		},
-		template: '<div class="recordings">' +
-		'<recording v-for="r in recordings" ' + 
-			'v-bind:transcript="r.transcript" ' + 
-			'v-bind:transcript_document =  "r.transcript_document" ' +
-			'v-bind:file = "r.file" ' +
-			'v-bind:extension = "r.extension" ' +
-		'> </recording>' +
-		'</div>'
-		} 
-	);
 
-
-
+	// Menu
 	var browse_menu_items = new Vue( {
 		el: '#browse-level-two',
 		data: {
@@ -92,8 +77,35 @@ window.addEventListener('load', function(){
 
 	});
 
-	window.transcript_text = new Vue({
+
+	// Recordings on Name detail
+	var recording_list = new Vue( 
+		{
+		el : '#recording-list',
+		data: {
+			recordings: window.recordings
+		},
+		template: '<div class="recordings">' +
+		'<recording v-for="r in recordings" ' + 
+			'v-bind:transcript="r.transcript" ' + 
+			'v-bind:transcript_document =  "r.transcript_document" ' +
+			'v-bind:file = "r.file" ' +
+			'v-bind:extension = "r.extension" ' +
+			'v-bind:key = "r.id" ' +
+		'> </recording>' +
+		'</div>'
+		} 
+	);
+
+	// Transcript text from recording inline on Name detail page
+	window.inline_transcript = new Vue({
 		el: '#transcript_text',
+		data: window.current_transcript ,
+		template: 
+			'<div class="transcript">' +
+				'<div class="transcript__text" v-html="text">' +
+				'</div>' +
+			'</div>'
 	});
 
 });
