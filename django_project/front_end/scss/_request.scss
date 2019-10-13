@@ -120,16 +120,19 @@
 }
 
 input[type="submit"]{ 
-	font-size: $large_font_size;
-	background-color: $black;
-	color: $white;
+	font-size: $small_font_size;
+	text-transform: uppercase;
+	border: 2px solid $black;
+	background-color: $white;
+	color: $black;
 	padding: .5rem;
 	min-width: 270px;
 
 	&:hover, active{
-		background-color: $blue;
+		background-color: $black;
+		color: $white;
 		text-align: center;
-		cursor: pointer;
+		cursor: url('/static/assets/pointer-50.png') 12 1, pointer;
 	}
 }
 
