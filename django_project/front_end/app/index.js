@@ -13,12 +13,19 @@ var Vue = require('vue/dist/vue.common');
 Vue.component('recording', {
 		props: ['transcript', 'transcript_document', 'file', 'extension'],
 		data: {  },
+		methods: {
+			show_transcript: function(event) { 
+				event.preventDefault();
+				console.log('test the transcript'); 
+			}
+			
+		},
 		template: 
 			'<div class="recording_details">' +
 			'<audio v-if="file" :src="file" controls="">Your browser does not support the audio element.</audio> ' +
 			'<div v-if="file" class="recording-list__recording-download"><a :href="file">{{ extension }}</a></div> ' + 
-			'<a v-if="transcript_document" :href="transcript_document" target="_blank">PDF</a>' +
-			'<a v-if="transcript" href="#">Transcript</a> ' +
+			'<a v-if="transcript_document" :href="transcript_document" target="_blank">PDF</a> ' +
+			'<a v-if="transcript" href="#" v-on:click="show_transcript">Transcript</a> ' +
 			'</div>' 
 });
 
