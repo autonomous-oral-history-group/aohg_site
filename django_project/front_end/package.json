@@ -1,7 +1,7 @@
 {
   "name": "aohg_front_end",
   "version": "0.0.1",
-  "description": "Front-end for the Autonomous Oral History Group's site",
+  "description": "Front-end for the Oral History Center's site",
   "main": "index.js",
   "repository": "https://github.com/autonomous-oral-history-group/aohg_site/",
   "author": "Michael Appuhn",

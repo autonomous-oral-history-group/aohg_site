@@ -50,7 +50,7 @@ class Request(models.Model):
 			return 'info@aohistorygroup.com'
 
 	def get_email_subject(self): 
-		return("New request from: %s - Autonomous Oral History Group" % self.full_name)
+		return("New request from: %s - Oral History Center" % self.full_name)
 
 	def get_item_list_string(self):
 		r = ''
@@ -60,7 +60,7 @@ class Request(models.Model):
 		return r 
 
 	def get_email_body(self): 
-		body = "A new request has been logged through the Autonomous Oral History Group site (aohistorygroup.com)."
+		body = "A new request has been logged through the Oral History Center site (aohistorygroup.com)."
 		body += "\n\n"
 		body += "Email: %s" % self.email
 		body += "\n"

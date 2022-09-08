@@ -1,4 +1,4 @@
-# Autonomous Oral History Group data entry and catalog maintenance
+# Oral History Center data entry and catalog maintenance
 
 Welcome, AOHG fam!
 
