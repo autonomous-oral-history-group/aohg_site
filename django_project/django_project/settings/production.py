@@ -14,17 +14,17 @@ DEBUG = False
 # Discover our IP address
 #ALLOWED_HOSTS = ip_addresses()
 #ALLOWED_HOSTS += ['aohistorygroup.com']
-ALLOWED_HOSTS = ['aohistorygroup.com', 'www.aohistorygroup.com',  'aohistorygroup.com', '134.209.59.89', '127.0.0.1']
+ALLOWED_HOSTS = ['oralhistorygroup.com', 'www.oralhistorygroup.com', 'aohistorygroup.com', 'www.aohistorygroup.com',  'aohistorygroup.com', '134.209.59.89', '127.0.0.1']
 ALLOWED_HOSTS += ip_addresses()
 
 APPEND_SLASH = True
 
 WSGI_APPLICATION = 'django_project.wsgi.application'
 
-#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' 
+#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases 
+# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -34,7 +34,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '',
     }
-} 
+}
 
 
 AWS_ACCESS_KEY_ID = get_env_variable('AWS_ACCESS_KEY_ID')
