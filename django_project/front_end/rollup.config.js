@@ -10,7 +10,7 @@ var configs = {
 	formats: ['iife'],
 	default: 'iife',
 	pathIn: 'app',
-	pathOut: 'js',
+	pathOut: '../static/js',
 	minify: true,
 	sourceMap: false
 };

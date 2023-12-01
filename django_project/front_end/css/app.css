@@ -7996,3 +7996,9 @@ input[type=submit]:hover, input[type=submit] active {
 .form--optional {
   color: #c8c8c8;
 }
+
+.glossary li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

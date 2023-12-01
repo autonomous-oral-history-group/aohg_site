@@ -1,0 +1,11 @@
+$wide-desktop: 1600px;
+
+@media only screen and (min-width : $wide-desktop){
+
+  .glossary li {
+    display: grid;
+    grid-template-columns: 33% 1fr;
+    gap: 1rem;
+  }
+
+}

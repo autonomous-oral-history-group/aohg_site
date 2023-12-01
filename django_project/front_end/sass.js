@@ -8,7 +8,7 @@ var configs = {
 	name: 'OHG',
 	files: ['app.scss'],
 	pathIn: 'scss',
-	pathOut: 'css',
+	pathOut: '../static/css',
 	indentType: 'space',
 	indentWidth: 2,
 	minify: true,
